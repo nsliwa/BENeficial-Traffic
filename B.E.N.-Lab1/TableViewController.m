@@ -106,23 +106,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     // self looks at current class
-    if(section == 0)
-        return self.incidents.count;
-    else
-        return 1;
+    //if(section == 0)
+    return self.incidents.count;
+    //else
+     //   return 1;
 }
 
 // Need to uncomment!!
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    IncidentTableViewCell* incidentCell = nil;
     if(indexPath.section==0){
-        IncidentTableViewCell* incidentCell = nil;
+        
         //UITableViewCell* cell = nil;
         
         // this is for section 1:
@@ -141,9 +141,10 @@
         
         NSLog(@" in incident cell");
         
-        return incidentCell;
+        
     
-    }
+    }return incidentCell;
+    /*
     else {
         UITableViewCell* cell = nil;
         
@@ -155,7 +156,7 @@
         
         NSLog(@"Hi there");
         return cell;
-    }
+    }*/
     
 }
 
