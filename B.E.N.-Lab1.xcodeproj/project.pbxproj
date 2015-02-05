@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		493259B41A837C1700B3ABEF /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493259B31A837C1700B3ABEF /* IncidentViewController.m */; };
+		49456AE41A83F5F9007876D8 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49456AE31A83F5F9007876D8 /* SettingsTableViewController.m */; };
 		ADC6F79D1A8169DD00356A9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F79C1A8169DD00356A9E /* main.m */; };
 		ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F79F1A8169DD00356A9E /* AppDelegate.m */; };
 		ADC6F7A31A8169DD00356A9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7A21A8169DD00356A9E /* ViewController.m */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		493259B21A837A8B00B3ABEF /* IncidentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
 		493259B31A837C1700B3ABEF /* IncidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncidentViewController.m; sourceTree = "<group>"; };
+		49456AE21A83F5F9007876D8 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		49456AE31A83F5F9007876D8 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		ADC6F7971A8169DD00356A9E /* B.E.N.-Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B.E.N.-Lab1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC6F79B1A8169DD00356A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC6F79C1A8169DD00356A9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				ADC6F7A41A8169DD00356A9E /* Main.storyboard */,
 				ADC6F79E1A8169DD00356A9E /* AppDelegate.h */,
 				ADC6F79F1A8169DD00356A9E /* AppDelegate.m */,
+				49456AE21A83F5F9007876D8 /* SettingsTableViewController.h */,
+				49456AE31A83F5F9007876D8 /* SettingsTableViewController.m */,
 				ADC6F7C51A81C2BB00356A9E /* TrafficIncident.h */,
 				ADC6F7C61A81C2BB00356A9E /* TrafficIncident.m */,
 				ADC6F7D51A81FF7C00356A9E /* TrafficIncidentModel.h */,
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49456AE41A83F5F9007876D8 /* SettingsTableViewController.m in Sources */,
 				ADC6F7D11A81FE3500356A9E /* MapQuestCommunicator.m in Sources */,
 				ADC6F7A31A8169DD00356A9E /* ViewController.m in Sources */,
 				ADC6F7C71A81C2BB00356A9E /* TrafficIncident.m in Sources */,
