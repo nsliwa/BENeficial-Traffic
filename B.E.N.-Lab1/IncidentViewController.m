@@ -16,7 +16,9 @@
     @property (weak, nonatomic) IBOutlet UITextField *IncidentSeverity;
     @property (weak, nonatomic) IBOutlet UITextField *IncidentDelay;
     @property (weak, nonatomic) IBOutlet UITextField *IncidentType;
+    @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+    @property (weak, nonatomic) UIView * collectionView;
 @end
 
 @implementation IncidentViewController
@@ -55,12 +57,17 @@
         self.IncidentType.text = @"Incident or Accident";
     }
     
-    /*
-    [self.scrollView addSubview:self.imageView];
-    self.scrollView.contentSize = self.imageView.image.size;
-    self.scrollView.minimumZoomScale = 0.1;
+    [self.collectionView addSubview:self.IncidentRoadName];
+    [self.collectionView addSubview:self.IncidentDescription];
+    [self.collectionView addSubview:self.IncidentSeverity];
+    [self.collectionView addSubview:self.IncidentDelay];
+    [self.collectionView addSubview:self.IncidentType];
+    
+    [self.scrollView addSubview:self.collectionView];
+    self.scrollView.contentSize = CGSizeMake(300, 300);
+    self.scrollView.minimumZoomScale = 1.0;
     self.scrollView.delegate = self;
-    */
+    
 }
 
 @end
