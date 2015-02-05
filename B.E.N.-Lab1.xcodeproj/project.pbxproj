@@ -458,6 +458,7 @@
 				ADC6F7BC1A8169DD00356A9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADC6F7BD1A8169DD00356A9E /* Build configuration list for PBXNativeTarget "B.E.N.-Lab1Tests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +467,7 @@
 				ADC6F7BF1A8169DD00356A9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
