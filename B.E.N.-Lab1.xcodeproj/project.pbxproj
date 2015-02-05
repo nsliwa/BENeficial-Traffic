@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493259B41A837C1700B3ABEF /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493259B31A837C1700B3ABEF /* IncidentViewController.m */; };
 		ADC6F79D1A8169DD00356A9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F79C1A8169DD00356A9E /* main.m */; };
 		ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F79F1A8169DD00356A9E /* AppDelegate.m */; };
 		ADC6F7A31A8169DD00356A9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7A21A8169DD00356A9E /* ViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493259B21A837A8B00B3ABEF /* IncidentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
+		493259B31A837C1700B3ABEF /* IncidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncidentViewController.m; sourceTree = "<group>"; };
 		ADC6F7971A8169DD00356A9E /* B.E.N.-Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B.E.N.-Lab1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC6F79B1A8169DD00356A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC6F79C1A8169DD00356A9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				ADC6F7DC1A820CDB00356A9E /* IncidentManagerDelegate.h */,
 				ADC6F7DD1A82121900356A9E /* TableViewController.h */,
 				ADC6F7DE1A82121900356A9E /* TableViewController.m */,
+				493259B21A837A8B00B3ABEF /* IncidentViewController.h */,
+				493259B31A837C1700B3ABEF /* IncidentViewController.m */,
 			);
 			path = "B.E.N.-Lab1";
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				ADC6F7A31A8169DD00356A9E /* ViewController.m in Sources */,
 				ADC6F7C71A81C2BB00356A9E /* TrafficIncident.m in Sources */,
 				ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */,
+				493259B41A837C1700B3ABEF /* IncidentViewController.m in Sources */,
 				ADC6F7DF1A82121900356A9E /* TableViewController.m in Sources */,
 				ADC6F79D1A8169DD00356A9E /* main.m in Sources */,
 				ADC6F7DA1A820A3000356A9E /* IncidentManager.m in Sources */,
