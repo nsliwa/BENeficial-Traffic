@@ -119,6 +119,7 @@
         
         BOOL unique = YES;
         
+        //TODO: CHECK THIS ERROR BAD ACCESS
         for(TrafficIncident* inc in self.currentIncidents) {
             if([inc.shortDesc isEqualToString:incident.shortDesc])
                 unique = NO;
