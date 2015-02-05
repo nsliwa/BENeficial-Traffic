@@ -76,9 +76,19 @@
         return nil;
     }
     
-    if([self.currentIncidents count]){
+    int empty = 0;
+    
+    NSLog(@"incident count, general: %lu, %lu", (unsigned long)self.currentIncidents.count, (unsigned long)[self.currentIncidents count]);
+    
+    /*
+    if([self.currentIncidents count] && !empty){
+        NSLog(@"incident count, bad_exec: %lu, %lu", (unsigned long)self.currentIncidents.count, (unsigned long)[self.currentIncidents count]);
         [self.currentIncidents removeAllObjects];
+        empty = 1;
     }
+     */
+    self.currentIncidents = [[NSMutableArray alloc] init];
+
     
     //only need incidents but:
     //  mqURL key-val pair provides url for traffic map of current location
