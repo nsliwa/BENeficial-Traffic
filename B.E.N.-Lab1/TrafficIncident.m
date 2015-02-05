@@ -57,9 +57,9 @@
     return _fullDesc;
 }
 
--(NSString*) type {
+-(NSInteger) type {
     if(! _type)
-        _type = @"incident type";
+        _type = 1;
     
     return _type;
 }
@@ -104,6 +104,20 @@
         _endTime = [NSDate dateWithTimeIntervalSinceNow:0];
     
     return _endTime;
+}
+
+-(NSString*) roadName {
+    if(! _roadName)
+        _roadName = @"Road to Nowhere";
+    
+    return _roadName;
+}
+
+-(UIImage*) thumbMap {
+    if(! _thumbMap)
+        _thumbMap = nil;
+    
+    return _thumbMap;
 }
 
 /*

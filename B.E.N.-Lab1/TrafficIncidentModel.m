@@ -8,6 +8,7 @@
 
 #import "TrafficIncidentModel.h"
 #import "TrafficIncident.h"
+#import "MapQuestCommunicator.h"
 
 @interface TrafficIncidentModel()
 
@@ -58,6 +59,8 @@
     jsonString = [jsonString stringByReplacingOccurrencesOfString:@");" withString:@""];
     incidentsAsJSON = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
+    //NSLog(jsonString);
+    
     NSDictionary *parsedIncidents = [NSJSONSerialization JSONObjectWithData:incidentsAsJSON options:0 error:&internalError];
     
     if (internalError != nil) {
@@ -71,10 +74,14 @@
     //only need incidents but:
     //  mqURL key-val pair provides url for traffic map of current location
     
-    NSArray *results = [parsedIncidents valueForKey:@"incidents"];
-    NSLog(@"Count %lu", (unsigned long)results.count);
+    NSDictionary *results = [parsedIncidents valueForKey:@"incidents"];
     
-    //NSLog([NSString stringWithFormat:@"before adding %lu", (unsigned long)[self.currentIncidents count]]);
+    NSArray *icon = [results valueForKey:@"iconURL"];
+    
+    NSLog(@"params: %@, %f", icon, icon.count);
+    
+    
+    NSLog(@"Count %lu", (unsigned long)results.count);
     
     for (NSDictionary *incidentDict in results) {
         TrafficIncident *incident = [[TrafficIncident alloc] init];
@@ -83,11 +90,24 @@
             if ([incident respondsToSelector:NSSelectorFromString(key)]) {
                 [incident setValue:[incidentDict valueForKey:key] forKey:key];
             }
+            
+            if([key  isEqual: @"parameterizedDescription"]) {
+                [incident setValue:[[incidentDict valueForKey:key] valueForKey:@"roadName"] forKey:@"roadName"];
+            }
         }
         
-        [self.currentIncidents addObject:incident];
+        [incident setValue:[MapquestCommunicator getThumbMap:incident.lat lng:incident.lng] forKey:@"thumbMap"];
         
-        NSLog([NSString stringWithFormat:@"%lu", (unsigned long)[self.currentIncidents count]]);
+        BOOL unique = YES;
+        
+        for(TrafficIncident* inc in self.currentIncidents) {
+            if([inc.shortDesc isEqualToString:incident.shortDesc])
+                unique = NO;
+        }
+        if(unique)
+            [self.currentIncidents addObject:incident];
+        
+        NSLog([NSString stringWithFormat:@"%lu, %@", (unsigned long)[self.currentIncidents count], incident.roadName]);
         
     }
     

@@ -46,6 +46,34 @@
     }];
 }
 
++(UIImage *)getIncidentMap:(double)lat lng:(double)lon {
+    int size1 = 400;
+    int size2 = 400;
+    int zoom = 12;
+    
+    NSString *urlAsString = [NSString stringWithFormat:@"http://www.mapquestapi.com/staticmap/v4/getmap?key=%@&size=%d,%d&zoom=%d&center=%f,%f&traffic=con,flow,inc", API_KEY, size1, size2, zoom, lat, lon];
+    
+    NSURL *url = [[NSURL alloc] initWithString:urlAsString];
+    NSLog(@"%@", urlAsString);
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    return [UIImage imageWithData:imageData];
+}
+
++(UIImage *)getThumbMap:(double)lat lng:(double)lon {
+    int size1 = 200;
+    int size2 = 200;
+    int zoom = 18;
+    
+    NSString *urlAsString = [NSString stringWithFormat:@"http://www.mapquestapi.com/staticmap/v4/getmap?key=%@&size=%d,%d&zoom=%d&center=%f,%f&traffic=con,flow,inc", API_KEY, size1, size2, zoom, lat, lon];
+    
+    NSURL *url = [[NSURL alloc] initWithString:urlAsString];
+    NSLog(@"%@", urlAsString);
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    return [UIImage imageWithData:imageData];
+}
+
 -(double) radiansToDegrees:(double) radians {
     return radians * (180 / M_PI);
 }
