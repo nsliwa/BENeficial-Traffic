@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E456EE8A-4BE9-4A1B-A6C6-DAB66D9DABC3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>B.E.N.-Lab1</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>99F87E616E9EA03E7E44E25DD2EE82EC80D422A3</key>
+		<string>https://github.com/nsliwa/BENeficial-Traffic.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>B.E.N.-Lab1.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>99F87E616E9EA03E7E44E25DD2EE82EC80D422A3</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nsliwa/BENeficial-Traffic.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>99F87E616E9EA03E7E44E25DD2EE82EC80D422A3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>99F87E616E9EA03E7E44E25DD2EE82EC80D422A3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BENeficial-Traffic</string>
+		</dict>
+	</array>
+</dict>
+</plist>
