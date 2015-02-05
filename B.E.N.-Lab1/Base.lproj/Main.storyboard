@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eqf-ln-Y57">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q0t-NR-3W5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--B.E.N.eficial Traffic-->
         <scene sceneID="3yi-f5-uii">
             <objects>
-                <tableViewController id="Szt-2j-AEq" sceneMemberID="viewController">
+                <tableViewController id="Szt-2j-AEq" customClass="MasterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wkK-Vz-iPN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="incidentMap" textLabel="79K-vM-X4V" style="IBUITableViewCellStyleDefault" id="pbc-iC-V6E">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="incidentMapCell" textLabel="79K-vM-X4V" style="IBUITableViewCellStyleDefault" id="pbc-iC-V6E">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pbc-iC-V6E" id="xr9-6a-EGn">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -31,7 +31,7 @@
                                     <segue destination="nAs-LC-U2i" kind="push" id="K6C-hc-VM3"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="incidentList" textLabel="FaH-BE-ZJ6" style="IBUITableViewCellStyleDefault" id="jy7-fA-TYS">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="incidentListCell" textLabel="FaH-BE-ZJ6" style="IBUITableViewCellStyleDefault" id="jy7-fA-TYS">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jy7-fA-TYS" id="yGa-Jx-Mk8">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -48,7 +48,7 @@
                                     <segue destination="Uc5-10-rhp" kind="push" id="QTP-4A-WgN"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="incidentCollection" textLabel="efE-1N-097" style="IBUITableViewCellStyleDefault" id="6EI-Tz-E1x">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="incidentCollectionCell" textLabel="efE-1N-097" style="IBUITableViewCellStyleDefault" id="6EI-Tz-E1x">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6EI-Tz-E1x" id="Uqg-9X-N3J">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -65,7 +65,7 @@
                                     <segue destination="yma-Et-tqj" kind="push" id="jZL-Kj-yzR"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settings" textLabel="KY2-kq-AL3" style="IBUITableViewCellStyleDefault" id="xCq-az-o8Z">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" textLabel="KY2-kq-AL3" style="IBUITableViewCellStyleDefault" id="xCq-az-o8Z">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xCq-az-o8Z" id="c4F-CS-i82">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -79,7 +79,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="WaU-lL-G3t" kind="push" id="A39-Bt-NDk"/>
+                                    <segue destination="WaU-lL-G3t" kind="push" identifier="SettingsSegue" id="A39-Bt-NDk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,7 +88,7 @@
                             <outlet property="delegate" destination="Szt-2j-AEq" id="a2M-q3-o6m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="eDF-aT-4qO"/>
+                    <navigationItem key="navigationItem" title="B.E.N.eficial Traffic" id="eDF-aT-4qO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRT-q8-j8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="111" y="-26"/>
         </scene>
-        <!--View Controller-->
+        <!--Incident View Controller-->
         <scene sceneID="D0A-KS-SDI">
             <objects>
-                <viewController id="eqf-ln-Y57" sceneMemberID="viewController">
+                <viewController id="eqf-ln-Y57" customClass="IncidentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kpT-FZ-YtJ"/>
                         <viewControllerLayoutGuide type="bottom" id="JPS-hf-oNo"/>
@@ -220,6 +220,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p46-kQ-f1M"/>
+                    <connections>
+                        <outlet property="IncidentDelay" destination="Q5z-Ks-QhC" id="qY8-CX-dpy"/>
+                        <outlet property="IncidentDescription" destination="MLP-gc-Wwh" id="ukO-bc-8k4"/>
+                        <outlet property="IncidentRoadName" destination="1Mz-4y-JKE" id="1Z7-WH-YQC"/>
+                        <outlet property="IncidentSeverity" destination="kay-SP-Pdh" id="DNQ-lg-sle"/>
+                        <outlet property="IncidentThumbMap" destination="lLS-9q-a1J" id="TJF-dg-ImD"/>
+                        <outlet property="IncidentType" destination="l97-a7-AEp" id="Wd7-Nl-hnj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQ8-ga-dCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,7 +249,7 @@
             </objects>
             <point key="canvasLocation" x="-265" y="639"/>
         </scene>
-        <!--B.E.N.eficial Traffic-->
+        <!--Incident List-->
         <scene sceneID="Ehl-Fq-SbD">
             <objects>
                 <tableViewController id="Uc5-10-rhp" customClass="TableViewController" sceneMemberID="viewController">
@@ -256,7 +264,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LocationLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja3-3E-58d">
-                                            <rect key="frame" x="16" y="8" width="190" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="250" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -265,13 +273,13 @@
                                             <rect key="frame" x="485" y="13" width="81" height="27"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DescriptionLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdP-HR-XWV">
-                                            <rect key="frame" x="16" y="33" width="190" height="21"/>
+                                            <rect key="frame" x="8" y="33" width="250" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-ps-Bhb">
-                                            <rect key="frame" x="211" y="13" width="81" height="27"/>
+                                            <rect key="frame" x="257" y="8" width="30" height="30"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -279,7 +287,7 @@
                                     <outlet property="descriptionLabel" destination="YdP-HR-XWV" id="NtK-6m-YwJ"/>
                                     <outlet property="locationLabel" destination="Ja3-3E-58d" id="b0G-vQ-AhE"/>
                                     <outlet property="severityImageView" destination="NDi-ps-Bhb" id="j7K-UQ-xDB"/>
-                                    <segue destination="eqf-ln-Y57" kind="push" id="Fy8-Jh-fCH"/>
+                                    <segue destination="eqf-ln-Y57" kind="push" identifier="IncidentDetailSegue" id="Fy8-Jh-fCH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -288,7 +296,7 @@
                             <outlet property="delegate" destination="Uc5-10-rhp" id="Xbc-m1-rOp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="B.E.N.eficial Traffic" id="XQy-oe-FvO"/>
+                    <navigationItem key="navigationItem" title="Incident List" id="XQy-oe-FvO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgg-IM-KB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

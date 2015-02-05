@@ -43,8 +43,8 @@
     if ([CLLocationManager locationServicesEnabled]) {
         [self.locationManager setDelegate:self];
         
-        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-            [self.locationManager requestAlwaysAuthorization];
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
         }
         
         [self.locationManager startUpdatingLocation];
@@ -58,8 +58,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    if (status == kCLAuthorizationStatusAuthorizedAlways) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"kCLAuthorizationStatusAuthorizedAlways" object:self];
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kCLAuthorizationStatusAuthorizedWhenInUse" object:self];
         NSLog(@"chngd auth stat");
     }
     NSLog([NSString stringWithFormat:@"auth status: %d", status]);
@@ -70,7 +70,7 @@
     [[locations lastObject] coordinate].latitude,
     [[locations lastObject] coordinate].longitude]);
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"kCLAuthorizationStatusAuthorizedAlways" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kCLAuthorizationStatusAuthorizedWhenInUse" object:self];
     NSLog(@"chngd auth stat");
     
     [self.locationManager stopUpdatingLocation];

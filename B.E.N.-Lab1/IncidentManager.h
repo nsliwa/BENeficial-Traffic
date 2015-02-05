@@ -26,5 +26,6 @@
     @property (weak, nonatomic) id<IncidentManagerDelegate> delegate;
 
     - (void)fetchIncidentsNearCoordinate:(CLLocationCoordinate2D)coordinate;
+    - (void)fetchCurrentIncidents;
 @end
 

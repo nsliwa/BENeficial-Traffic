@@ -22,6 +22,7 @@
 		ADC6F7D71A81FF7C00356A9E /* TrafficIncidentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7D61A81FF7C00356A9E /* TrafficIncidentModel.m */; };
 		ADC6F7DA1A820A3000356A9E /* IncidentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7D91A820A3000356A9E /* IncidentManager.m */; };
 		ADC6F7DF1A82121900356A9E /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7DE1A82121900356A9E /* TableViewController.m */; };
+		ADC6F7E21A838C2C00356A9E /* MasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7E11A838C2C00356A9E /* MasterTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		ADC6F7DC1A820CDB00356A9E /* IncidentManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentManagerDelegate.h; sourceTree = "<group>"; };
 		ADC6F7DD1A82121900356A9E /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		ADC6F7DE1A82121900356A9E /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		ADC6F7E01A838C2C00356A9E /* MasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTableViewController.h; sourceTree = "<group>"; };
+		ADC6F7E11A838C2C00356A9E /* MasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,30 +111,32 @@
 		ADC6F7991A8169DD00356A9E /* B.E.N.-Lab1 */ = {
 			isa = PBXGroup;
 			children = (
+				ADC6F7A41A8169DD00356A9E /* Main.storyboard */,
 				ADC6F79E1A8169DD00356A9E /* AppDelegate.h */,
 				ADC6F79F1A8169DD00356A9E /* AppDelegate.m */,
-				ADC6F7CF1A81FE3500356A9E /* MapQuestCommunicator.h */,
-				ADC6F7D01A81FE3500356A9E /* MapQuestCommunicator.m */,
-				ADC6F7A11A8169DD00356A9E /* ViewController.h */,
-				ADC6F7A21A8169DD00356A9E /* ViewController.m */,
-				ADC6F7A41A8169DD00356A9E /* Main.storyboard */,
 				ADC6F7C51A81C2BB00356A9E /* TrafficIncident.h */,
 				ADC6F7C61A81C2BB00356A9E /* TrafficIncident.m */,
+				ADC6F7D51A81FF7C00356A9E /* TrafficIncidentModel.h */,
+				ADC6F7D61A81FF7C00356A9E /* TrafficIncidentModel.m */,
+				ADC6F7CF1A81FE3500356A9E /* MapQuestCommunicator.h */,
+				ADC6F7D01A81FE3500356A9E /* MapQuestCommunicator.m */,
+				ADC6F7DB1A820C1A00356A9E /* MapQuestCommunicatorDelegate.h */,
+				ADC6F7D81A820A3000356A9E /* IncidentManager.h */,
+				ADC6F7D91A820A3000356A9E /* IncidentManager.m */,
+				ADC6F7DC1A820CDB00356A9E /* IncidentManagerDelegate.h */,
+				ADC6F7E01A838C2C00356A9E /* MasterTableViewController.h */,
+				ADC6F7E11A838C2C00356A9E /* MasterTableViewController.m */,
+				ADC6F7DD1A82121900356A9E /* TableViewController.h */,
+				ADC6F7DE1A82121900356A9E /* TableViewController.m */,
+				493259B21A837A8B00B3ABEF /* IncidentViewController.h */,
+				493259B31A837C1700B3ABEF /* IncidentViewController.m */,
+				ADC6F7A11A8169DD00356A9E /* ViewController.h */,
+				ADC6F7A21A8169DD00356A9E /* ViewController.m */,
 				ADC6F7C21A81AEFE00356A9E /* IncidentTableViewCell.h */,
 				ADC6F7C31A81AEFE00356A9E /* IncidentTableViewCell.m */,
 				ADC6F7A71A8169DD00356A9E /* Images.xcassets */,
 				ADC6F7A91A8169DD00356A9E /* LaunchScreen.xib */,
 				ADC6F79A1A8169DD00356A9E /* Supporting Files */,
-				ADC6F7D51A81FF7C00356A9E /* TrafficIncidentModel.h */,
-				ADC6F7D61A81FF7C00356A9E /* TrafficIncidentModel.m */,
-				ADC6F7D81A820A3000356A9E /* IncidentManager.h */,
-				ADC6F7D91A820A3000356A9E /* IncidentManager.m */,
-				ADC6F7DB1A820C1A00356A9E /* MapQuestCommunicatorDelegate.h */,
-				ADC6F7DC1A820CDB00356A9E /* IncidentManagerDelegate.h */,
-				ADC6F7DD1A82121900356A9E /* TableViewController.h */,
-				ADC6F7DE1A82121900356A9E /* TableViewController.m */,
-				493259B21A837A8B00B3ABEF /* IncidentViewController.h */,
-				493259B31A837C1700B3ABEF /* IncidentViewController.m */,
 			);
 			path = "B.E.N.-Lab1";
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */,
 				493259B41A837C1700B3ABEF /* IncidentViewController.m in Sources */,
 				ADC6F7DF1A82121900356A9E /* TableViewController.m in Sources */,
+				ADC6F7E21A838C2C00356A9E /* MasterTableViewController.m in Sources */,
 				ADC6F79D1A8169DD00356A9E /* main.m in Sources */,
 				ADC6F7DA1A820A3000356A9E /* IncidentManager.m in Sources */,
 				ADC6F7C41A81AEFE00356A9E /* IncidentTableViewCell.m in Sources */,

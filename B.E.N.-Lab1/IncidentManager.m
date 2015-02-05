@@ -26,6 +26,16 @@
     
 }
 
+-(void)fetchCurrentIncidents{
+    @try {
+        [self.delegate didReceiveIncidents:[self.trafficModel getCurrentIncidents]];
+    }
+    @catch (NSException *exception) {
+        [self.delegate fetchingIncidentsFailedWithError:exception];
+    }
+    
+}
+
 #pragma mark - MapquestCommunicatorDelegate implementation
 -(void)receivedIncidentsJSON:(NSData *)incidentsAsJSON {
     

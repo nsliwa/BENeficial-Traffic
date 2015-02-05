@@ -10,10 +10,10 @@
 
 #import "TableViewController.h"
 
-#import "TrafficIncident.h"
 #import "TrafficIncidentModel.h"
 #import "MapQuestCommunicator.h"
 #import "IncidentManager.h"
+#import "IncidentViewController.h"
 #import "IncidentTableViewCell.h"
 
 @interface TableViewController() <IncidentManagerDelegate>//, CLLocationManagerDelegate>
@@ -21,10 +21,18 @@
     @property (strong, nonatomic) NSArray* incidents;
     @property (strong, nonatomic) IncidentManager* manager;
     @property (weak, nonatomic) CLLocationManager* locationManager;
+    @property (strong, nonatomic) TrafficIncidentModel *trafficModel;
 
 @end
 
 @implementation TableViewController
+
+-(TrafficIncidentModel*) trafficModel {
+    if(!_trafficModel)
+        _trafficModel = [TrafficIncidentModel incidents];
+    
+    return _trafficModel;
+}
 
 -(IncidentManager*) manager {
     if(!_manager)
@@ -83,10 +91,12 @@
     NSLog(@"startfetching");
     //NSLog([NSString stringWithFormat:@"(%f, %f)", coord.latitude, coord.longitude]);
     
+    //[self.trafficModel getCurrentIncidents];
+    [self.manager fetchCurrentIncidents];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(startFetchingIncidents:)
-                                                 name:@"kCLAuthorizationStatusAuthorizedAlways"
+                                                 name:@"kCLAuthorizationStatusAuthorizedWhenInUse"
                                                object:nil];
     
     NSLog(@"View did load");
@@ -129,58 +139,60 @@
         incidentCell = [tableView dequeueReusableCellWithIdentifier:@"IncidentCell" forIndexPath:indexPath];
         //cell = [tableView dequeueReusableCellWithIdentifier:@"IncidentCell" forIndexPath:indexPath];
         
-        TrafficIncident *incident = self.incidents[indexPath.row];
-        NSString* location = [NSString stringWithFormat:@"(%f, %f)", incident.lat, incident.lng];
-        
-        // Configure the cell...
-        incidentCell.descriptionLabel.text = incident.shortDesc;//[incident.shortDesc];
-        //cell.detailTextLabel.text = incident.shortDesc;//[incident.shortDesc];
-        
-        incidentCell.locationLabel.text = incident.roadName;
-        //cell.textLabel.text = location;
-        
-        if(incident.type == 1) {
-            //construction
-            if(incident.severity == 0 || incident.severity == 1)
-                incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_minor_icon.png"];
-            else if(incident.severity == 2 || incident.severity == 3)
-                incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_moderate_icon.png"];
-            else
-                incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_severe_icon.png"];
-        }
-        if(incident.type == 2) {
-            //event
-            incidentCell.severityImageView.image = [UIImage imageNamed:@"event_icon.png"];
-        }
-        if(incident.type == 3) {
-            //congestion
-            incidentCell.severityImageView.image = [UIImage imageNamed:@"congestion_icon.png"];
-        }
-        if(incident.type == 4) {
-            //incident
-            if(incident.severity == 0 || incident.severity == 1)
-                incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_minor_icon.png"];
-            else if(incident.severity == 2 || incident.severity == 3)
-                incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_moderate_icon.png"];
-            else
-                incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_severe_icon.png"];
-        }
-        
-        if(incident.severity == 0 || incident.severity == 1) {
-            incidentCell.severityImageView.layer.borderColor = [UIColor greenColor].CGColor;
-            incidentCell.severityImageView.backgroundColor = [UIColor greenColor];
-        }
-        else if(incident.severity == 3) {
-            incidentCell.severityImageView.backgroundColor = [UIColor yellowColor];
-            incidentCell.severityImageView.layer.borderColor = [UIColor yellowColor].CGColor;
-        }
-        else if(incident.severity == 3) {
-            incidentCell.severityImageView.backgroundColor = [UIColor orangeColor];
-            incidentCell.severityImageView.layer.borderColor = [UIColor orangeColor].CGColor;
-        }
-        else {
-            incidentCell.severityImageView.backgroundColor = [UIColor redColor];
-            incidentCell.severityImageView.layer.borderColor = [UIColor redColor].CGColor;
+        if(self.incidents && self.incidents.count) {
+            TrafficIncident *incident = self.incidents[indexPath.row];
+            //NSString* location = [NSString stringWithFormat:@"(%f, %f)", incident.lat, incident.lng];
+            
+            // Configure the cell...
+            incidentCell.descriptionLabel.text = incident.shortDesc;//[incident.shortDesc];
+            //cell.detailTextLabel.text = incident.shortDesc;//[incident.shortDesc];
+            
+            incidentCell.locationLabel.text = incident.roadName;
+            //cell.textLabel.text = location;
+            
+            if(incident.type == 1) {
+                //construction
+                if(incident.severity == 0 || incident.severity == 1)
+                    incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_minor_icon.png"];
+                else if(incident.severity == 2 || incident.severity == 3)
+                    incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_moderate_icon.png"];
+                else
+                    incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_severe_icon.png"];
+            }
+            if(incident.type == 2) {
+                //event
+                incidentCell.severityImageView.image = [UIImage imageNamed:@"event_icon.png"];
+            }
+            if(incident.type == 3) {
+                //congestion
+                incidentCell.severityImageView.image = [UIImage imageNamed:@"congestion_icon.png"];
+            }
+            if(incident.type == 4) {
+                //incident
+                if(incident.severity == 0 || incident.severity == 1)
+                    incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_minor_icon.png"];
+                else if(incident.severity == 2 || incident.severity == 3)
+                    incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_moderate_icon.png"];
+                else
+                    incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_severe_icon.png"];
+            }
+            
+            if(incident.severity == 0 || incident.severity == 1) {
+                incidentCell.severityImageView.layer.borderColor = [UIColor greenColor].CGColor;
+                incidentCell.severityImageView.backgroundColor = [UIColor greenColor];
+            }
+            else if(incident.severity == 3) {
+                incidentCell.severityImageView.backgroundColor = [UIColor yellowColor];
+                incidentCell.severityImageView.layer.borderColor = [UIColor yellowColor].CGColor;
+            }
+            else if(incident.severity == 3) {
+                incidentCell.severityImageView.backgroundColor = [UIColor orangeColor];
+                incidentCell.severityImageView.layer.borderColor = [UIColor orangeColor].CGColor;
+            }
+            else {
+                incidentCell.severityImageView.backgroundColor = [UIColor redColor];
+                incidentCell.severityImageView.layer.borderColor = [UIColor redColor].CGColor;
+            }
         }
         
         NSLog(@" in incident cell");
@@ -219,6 +231,19 @@
 
     NSLog(@"Error %@; %@", error, [error localizedDescription]);
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"prepare for segue");
+    
+    if([segue.identifier isEqualToString:@"IncidentDetailSegue"]) {
+        IncidentTableViewCell* cell = (IncidentTableViewCell*)sender;
+        IncidentViewController *ivc =  [segue destinationViewController];
+        
+        ivc.incident = [self.trafficModel getIncidentWithShortDescription:cell.descriptionLabel.text];
+        
+        //[self.navigationController pushViewController:ivc animated:YES];
+    }
 }
 
 /*

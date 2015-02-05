@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TrafficIncident.h"
 
 @interface IncidentViewController : UIViewController
+
+    @property (strong, nonatomic) TrafficIncident* incident;
 
 @end

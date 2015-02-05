@@ -35,6 +35,13 @@
     return _incidents;
 }
 
+-(TrafficIncident*) getIncidentWithShortDescription:(NSString*)descr {
+    for(TrafficIncident* inc in self.currentIncidents) {
+        if([inc.shortDesc isEqualToString:descr])
+            return inc;
+    }
+    return nil;
+}
 
 -(NSMutableArray*) currentIncidents {
     if (!_currentIncidents)
@@ -69,7 +76,9 @@
         return nil;
     }
     
-    [self.currentIncidents removeAllObjects];
+    if([self.currentIncidents count]){
+        [self.currentIncidents removeAllObjects];
+    }
     
     //only need incidents but:
     //  mqURL key-val pair provides url for traffic map of current location

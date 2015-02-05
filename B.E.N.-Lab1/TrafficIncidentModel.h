@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TrafficIncident.h"
+
 @interface TrafficIncidentModel : NSObject
 
     + (TrafficIncidentModel *)incidents;
     - (NSArray *)incidentsFromJSON:(NSData *)objectNotation error:(NSError **)error;
     - (NSArray *)getCurrentIncidents;
+    -(TrafficIncident*) getIncidentWithShortDescription:(NSString*)descr;
     //+ (NSMutableArray*) currentIncidents;
 
 @end
