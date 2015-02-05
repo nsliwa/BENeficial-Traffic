@@ -136,8 +136,52 @@
         incidentCell.descriptionLabel.text = incident.shortDesc;//[incident.shortDesc];
         //cell.detailTextLabel.text = incident.shortDesc;//[incident.shortDesc];
         
-        incidentCell.locationLabel.text = location;
+        incidentCell.locationLabel.text = incident.roadName;
         //cell.textLabel.text = location;
+        
+        if(incident.type == 1) {
+            //construction
+            if(incident.severity == 0 || incident.severity == 1)
+                incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_minor_icon.png"];
+            else if(incident.severity == 2 || incident.severity == 3)
+                incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_moderate_icon.png"];
+            else
+                incidentCell.severityImageView.image = [UIImage imageNamed:@"construction_severe_icon.png"];
+        }
+        if(incident.type == 2) {
+            //event
+            incidentCell.severityImageView.image = [UIImage imageNamed:@"event_icon.png"];
+        }
+        if(incident.type == 3) {
+            //congestion
+            incidentCell.severityImageView.image = [UIImage imageNamed:@"congestion_icon.png"];
+        }
+        if(incident.type == 4) {
+            //incident
+            if(incident.severity == 0 || incident.severity == 1)
+                incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_minor_icon.png"];
+            else if(incident.severity == 2 || incident.severity == 3)
+                incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_moderate_icon.png"];
+            else
+                incidentCell.severityImageView.image = [UIImage imageNamed:@"incident_severe_icon.png"];
+        }
+        
+        if(incident.severity == 0 || incident.severity == 1) {
+            incidentCell.severityImageView.layer.borderColor = [UIColor greenColor].CGColor;
+            incidentCell.severityImageView.backgroundColor = [UIColor greenColor];
+        }
+        else if(incident.severity == 3) {
+            incidentCell.severityImageView.backgroundColor = [UIColor yellowColor];
+            incidentCell.severityImageView.layer.borderColor = [UIColor yellowColor].CGColor;
+        }
+        else if(incident.severity == 3) {
+            incidentCell.severityImageView.backgroundColor = [UIColor orangeColor];
+            incidentCell.severityImageView.layer.borderColor = [UIColor orangeColor].CGColor;
+        }
+        else {
+            incidentCell.severityImageView.backgroundColor = [UIColor redColor];
+            incidentCell.severityImageView.layer.borderColor = [UIColor redColor].CGColor;
+        }
         
         NSLog(@" in incident cell");
         
@@ -164,8 +208,10 @@
 
 -(void)didReceiveIncidents:(NSArray *)incidents {
     
+    NSLog(@"did receive incidents");
     _incidents = incidents;
     [self.tableView reloadData];
+    NSLog(@"did load incidents");
     
 }
 

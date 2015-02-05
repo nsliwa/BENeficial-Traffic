@@ -21,13 +21,16 @@
     @property (assign, nonatomic) CLLocationDegrees lng;
     @property (strong, nonatomic) NSString *shortDesc;
     @property (strong, nonatomic) NSString *fullDesc;
-    @property (strong, nonatomic) NSString *type;
+    @property (assign, nonatomic) NSInteger type;
     @property (assign, nonatomic) NSInteger severity;
     @property (assign, nonatomic) BOOL impacting;
     @property (assign, nonatomic) double delayFromTypical;
     @property (assign, nonatomic) double distance;
     @property (strong, nonatomic) NSDate *startTime;
     @property (strong, nonatomic) NSDate *endTime;
+
+    @property (strong, nonatomic) UIImage* thumbMap;
+    @property (strong, nonatomic) NSString* roadName;
 
 /*
     -(CLLocationDegrees) getLatitude;
