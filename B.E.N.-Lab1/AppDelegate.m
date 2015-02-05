@@ -7,17 +7,78 @@
 //
 
 #import "AppDelegate.h"
+#import <Foundation/Foundation.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <CLLocationManagerDelegate>
+
+@property NSTimer* timer;
 
 @end
 
 @implementation AppDelegate
+/*
+-(NSTimer*) timer {
+    
+    if(!_timer)
+        _timer = ;
+    
+    return _timer;
+    
+}
+*/
+-(CLLocationManager*) locationManager {
+    
+    if(!_locationManager)
+        _locationManager = [[CLLocationManager alloc] init];
+    
+    NSLog(@"init loc mngr in app del");
+    
+    return _locationManager;
+    
+}
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    if ([CLLocationManager locationServicesEnabled]) {
+        [self.locationManager setDelegate:self];
+        
+        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [self.locationManager requestAlwaysAuthorization];
+        }
+        
+        [self.locationManager startUpdatingLocation];
+        NSLog(@"loc serv enbld");
+    }
+    
     return YES;
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusAuthorizedAlways) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kCLAuthorizationStatusAuthorizedAlways" object:self];
+        NSLog(@"chngd auth stat");
+    }
+    NSLog([NSString stringWithFormat:@"auth status: %d", status]);
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog([NSString stringWithFormat:@"did update location: (%f, %f)",
+    [[locations lastObject] coordinate].latitude,
+    [[locations lastObject] coordinate].longitude]);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kCLAuthorizationStatusAuthorizedAlways" object:self];
+    NSLog(@"chngd auth stat");
+    
+    [self.locationManager stopUpdatingLocation];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(_turnOnLocationManager)  userInfo:nil repeats:NO];
+}
+
+- (void)_turnOnLocationManager {
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

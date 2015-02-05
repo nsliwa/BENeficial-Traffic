@@ -14,6 +14,13 @@
 		ADC6F7A81A8169DD00356A9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC6F7A71A8169DD00356A9E /* Images.xcassets */; };
 		ADC6F7AB1A8169DD00356A9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC6F7A91A8169DD00356A9E /* LaunchScreen.xib */; };
 		ADC6F7B71A8169DD00356A9E /* B_E_N__Lab1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7B61A8169DD00356A9E /* B_E_N__Lab1Tests.m */; };
+		ADC6F7C11A816DC900356A9E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC6F7C01A816DC900356A9E /* CoreLocation.framework */; };
+		ADC6F7C41A81AEFE00356A9E /* IncidentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7C31A81AEFE00356A9E /* IncidentTableViewCell.m */; };
+		ADC6F7C71A81C2BB00356A9E /* TrafficIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7C61A81C2BB00356A9E /* TrafficIncident.m */; };
+		ADC6F7D11A81FE3500356A9E /* MapQuestCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7D01A81FE3500356A9E /* MapQuestCommunicator.m */; };
+		ADC6F7D71A81FF7C00356A9E /* TrafficIncidentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7D61A81FF7C00356A9E /* TrafficIncidentModel.m */; };
+		ADC6F7DA1A820A3000356A9E /* IncidentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7D91A820A3000356A9E /* IncidentManager.m */; };
+		ADC6F7DF1A82121900356A9E /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7DE1A82121900356A9E /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,21 @@
 		ADC6F7B01A8169DD00356A9E /* B.E.N.-Lab1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B.E.N.-Lab1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC6F7B51A8169DD00356A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC6F7B61A8169DD00356A9E /* B_E_N__Lab1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = B_E_N__Lab1Tests.m; sourceTree = "<group>"; };
+		ADC6F7C01A816DC900356A9E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ADC6F7C21A81AEFE00356A9E /* IncidentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentTableViewCell.h; sourceTree = "<group>"; };
+		ADC6F7C31A81AEFE00356A9E /* IncidentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncidentTableViewCell.m; sourceTree = "<group>"; };
+		ADC6F7C51A81C2BB00356A9E /* TrafficIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficIncident.h; sourceTree = "<group>"; };
+		ADC6F7C61A81C2BB00356A9E /* TrafficIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficIncident.m; sourceTree = "<group>"; };
+		ADC6F7CF1A81FE3500356A9E /* MapQuestCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapQuestCommunicator.h; sourceTree = "<group>"; };
+		ADC6F7D01A81FE3500356A9E /* MapQuestCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapQuestCommunicator.m; sourceTree = "<group>"; };
+		ADC6F7D51A81FF7C00356A9E /* TrafficIncidentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficIncidentModel.h; sourceTree = "<group>"; };
+		ADC6F7D61A81FF7C00356A9E /* TrafficIncidentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficIncidentModel.m; sourceTree = "<group>"; };
+		ADC6F7D81A820A3000356A9E /* IncidentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentManager.h; sourceTree = "<group>"; };
+		ADC6F7D91A820A3000356A9E /* IncidentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncidentManager.m; sourceTree = "<group>"; };
+		ADC6F7DB1A820C1A00356A9E /* MapQuestCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapQuestCommunicatorDelegate.h; sourceTree = "<group>"; };
+		ADC6F7DC1A820CDB00356A9E /* IncidentManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentManagerDelegate.h; sourceTree = "<group>"; };
+		ADC6F7DD1A82121900356A9E /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		ADC6F7DE1A82121900356A9E /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC6F7C11A816DC900356A9E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 		ADC6F78E1A8169DD00356A9E = {
 			isa = PBXGroup;
 			children = (
+				ADC6F7C01A816DC900356A9E /* CoreLocation.framework */,
 				ADC6F7991A8169DD00356A9E /* B.E.N.-Lab1 */,
 				ADC6F7B31A8169DD00356A9E /* B.E.N.-Lab1Tests */,
 				ADC6F7981A8169DD00356A9E /* Products */,
@@ -83,12 +107,26 @@
 			children = (
 				ADC6F79E1A8169DD00356A9E /* AppDelegate.h */,
 				ADC6F79F1A8169DD00356A9E /* AppDelegate.m */,
+				ADC6F7CF1A81FE3500356A9E /* MapQuestCommunicator.h */,
+				ADC6F7D01A81FE3500356A9E /* MapQuestCommunicator.m */,
 				ADC6F7A11A8169DD00356A9E /* ViewController.h */,
 				ADC6F7A21A8169DD00356A9E /* ViewController.m */,
 				ADC6F7A41A8169DD00356A9E /* Main.storyboard */,
+				ADC6F7C51A81C2BB00356A9E /* TrafficIncident.h */,
+				ADC6F7C61A81C2BB00356A9E /* TrafficIncident.m */,
+				ADC6F7C21A81AEFE00356A9E /* IncidentTableViewCell.h */,
+				ADC6F7C31A81AEFE00356A9E /* IncidentTableViewCell.m */,
 				ADC6F7A71A8169DD00356A9E /* Images.xcassets */,
 				ADC6F7A91A8169DD00356A9E /* LaunchScreen.xib */,
 				ADC6F79A1A8169DD00356A9E /* Supporting Files */,
+				ADC6F7D51A81FF7C00356A9E /* TrafficIncidentModel.h */,
+				ADC6F7D61A81FF7C00356A9E /* TrafficIncidentModel.m */,
+				ADC6F7D81A820A3000356A9E /* IncidentManager.h */,
+				ADC6F7D91A820A3000356A9E /* IncidentManager.m */,
+				ADC6F7DB1A820C1A00356A9E /* MapQuestCommunicatorDelegate.h */,
+				ADC6F7DC1A820CDB00356A9E /* IncidentManagerDelegate.h */,
+				ADC6F7DD1A82121900356A9E /* TableViewController.h */,
+				ADC6F7DE1A82121900356A9E /* TableViewController.m */,
 			);
 			path = "B.E.N.-Lab1";
 			sourceTree = "<group>";
@@ -219,9 +257,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC6F7D11A81FE3500356A9E /* MapQuestCommunicator.m in Sources */,
 				ADC6F7A31A8169DD00356A9E /* ViewController.m in Sources */,
+				ADC6F7C71A81C2BB00356A9E /* TrafficIncident.m in Sources */,
 				ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */,
+				ADC6F7DF1A82121900356A9E /* TableViewController.m in Sources */,
 				ADC6F79D1A8169DD00356A9E /* main.m in Sources */,
+				ADC6F7DA1A820A3000356A9E /* IncidentManager.m in Sources */,
+				ADC6F7C41A81AEFE00356A9E /* IncidentTableViewCell.m in Sources */,
+				ADC6F7D71A81FF7C00356A9E /* TrafficIncidentModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
