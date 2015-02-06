@@ -87,17 +87,19 @@
         
         return _numIncidentCell;
     }
-    else if(indexPath.section==2) {
+    else if(indexPath.section==3) {
         IncidentTypeTableViewCell* incidentTypeCell = nil;
         
         incidentTypeCell = [tableView dequeueReusableCellWithIdentifier:@"incidentTypeCell" forIndexPath:indexPath];
         
         return incidentTypeCell;
     }
-    else if(indexPath.section==3) {
+    else if(indexPath.section==2) {
         SeverityTableViewCell* severityCell = nil;
         severityCell = [tableView dequeueReusableCellWithIdentifier:@"severityCell" forIndexPath:indexPath];
-        //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
+        
+        
+        
         return severityCell;
     }
     else if(indexPath.section==4) {

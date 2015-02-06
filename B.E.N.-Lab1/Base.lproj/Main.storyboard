@@ -411,7 +411,7 @@
                                             <rect key="frame" x="113" y="41" width="94" height="29"/>
                                         </stepper>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="numIncidentsLabel" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NumIncidentsLabel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Of-4R-ODc" userLabel="NumIncidentsLabel">
-                                            <rect key="frame" x="33" y="9" width="186" height="30"/>
+                                            <rect key="frame" x="33" y="10" width="279" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -422,7 +422,7 @@
                                     <outlet property="numIncidentsStepper" destination="nh8-Xr-h0E" id="C9P-Y2-u8F"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="incidentTypeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="incidentTypeCell" id="ZbI-gR-bqv" customClass="IncidentTypeTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="severityCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="severityCell" id="ZbI-gR-bqv" customClass="SeverityTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZbI-gR-bqv" id="Wab-kg-DXH">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -445,10 +445,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="incidentTypeSegmentControl" destination="T99-XI-b3a" id="lMG-Km-fQJ"/>
+                                    <outlet property="minimumSeverityLabel" destination="UiR-0M-Cek" id="4be-u2-PZc"/>
+                                    <outlet property="minimumSeveritySegment" destination="T99-XI-b3a" id="t9c-6p-YSj"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="severityCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="severityCell" id="Y7Z-hJ-vG2" customClass="SeverityTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="incidentCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="incidentTypeCell" id="Y7Z-hJ-vG2" customClass="IncidentTypeTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y7Z-hJ-vG2" id="9Qj-zg-Uxi">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -464,7 +465,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="severityPicker" destination="Rfe-dW-fbx" id="e7s-CJ-e2T"/>
+                                    <outlet property="incidentLabel" destination="4Sj-th-eIN" id="whO-1j-lrH"/>
+                                    <outlet property="incidentType" destination="Rfe-dW-fbx" id="CSY-C4-ONN"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="disableUpdateCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="disableUpdateCell" id="zbf-iz-Vey" customClass="DisableUpdateTableViewCell">
@@ -513,7 +515,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-Gm-3UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="1357"/>
+            <point key="canvasLocation" x="128" y="1356"/>
         </scene>
     </scenes>
     <resources>

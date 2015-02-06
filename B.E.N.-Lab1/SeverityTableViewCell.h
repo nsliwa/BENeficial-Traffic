@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SeverityTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIPickerView *severityPicker;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *minimumSeveritySegment;
+@property (weak, nonatomic) IBOutlet UITextField *minimumSeverityLabel;
+
 
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface IncidentTypeTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UISegmentedControl *incidentTypeSegmentControl;
+@property (weak, nonatomic) IBOutlet UIPickerView *incidentType;
+@property (weak, nonatomic) IBOutlet UITextField *incidentLabel;
+
 
 @end
