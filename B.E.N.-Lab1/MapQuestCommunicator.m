@@ -15,12 +15,20 @@
 
 @implementation MapquestCommunicator
 
+static double radius = 10.0;
++(double)radius {
+    @synchronized(self) { return radius; }
+    
+    NSLog(@"RADIUS VALUE: %f", radius);
+}
+
++ (void) setMapRadius:(double)rad {
+    @synchronized(self) { radius = rad; }
+}
+
 -(void) searchIncidentsNearCoordinate:(CLLocationCoordinate2D)coordinate {
     
     double R = 3963.1676;  // earth radius in miles
-    
-    // TO DO: make property determined by user settings
-    double radius = 10; // radius of bounding box in miles
     
     // calculates bounding box coordinates for API call
     double lon1 = coordinate.longitude - [self radiansToDegrees: radius / R / cos([self degreesToRadians: coordinate.latitude])];

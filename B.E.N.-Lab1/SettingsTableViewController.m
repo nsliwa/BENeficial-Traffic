@@ -13,6 +13,8 @@
 #import "SeverityTableViewCell.h"
 #import "DisableUpdateTableViewCell.h"
 #import "UpdateNowTableViewCell.h"
+#import "MapQuestCommunicator.h"
+#import "TrafficIncidentModel.h"
 
 @interface SettingsTableViewController()
 
@@ -29,7 +31,7 @@
     //self.numIncidentsLabel.text = [NSString stringWithFormat:@"%f", sender.value];
     
 }*/
-
+/*
 -(void) viewDidLoad {
     [super viewDidLoad];
     
@@ -41,11 +43,8 @@
     
     
     
-}
+}*/
 
--(void) viewDidAppear:(BOOL)animated{
-    
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -129,6 +128,9 @@
 
 -(void)radiusChanged:(UISlider*)sender
 {
+    [MapquestCommunicator setMapRadius:sender.value];
+    NSLog(@"radius val: %f", [MapquestCommunicator radius]);
+    /*
     @try {
         NSDictionary *dic = @{
                               @"radius" : [NSNumber numberWithFloat:sender.value]
@@ -140,12 +142,16 @@
     }
     @catch (NSException *exception) {
         NSLog(exception.debugDescription);
-    }
+    }*/
     
 }
 
 -(void)stepperChanged:(UIStepper*)sender{
     _numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)sender.value];
+    
+    [TrafficIncidentModel setIncidentLimit:(int)sender.value];
+    NSLog(@"incident limit val: %d, %d", (int)sender.value, [TrafficIncidentModel incidentLimit]);
+    /*
     @try {
         
         NSDictionary *dic = @{
@@ -159,6 +165,7 @@
         @catch (NSException *exception) {
         NSLog(exception.debugDescription);
     }
+     */
 }
 
 -(void)navigationUpdaterToggled:(UISwitch*)sender
@@ -172,10 +179,11 @@
     }
 }
 
-
+/*
 - (void)changedRadiusLabel:(NSNotification *)notification {
     //[self.locationManager startUpdatingLocation];
+    [MapquestCommunicator setMapRadius:[[notification.userInfo valueForKey:@"radius"] floatValue]];
     
     NSLog(@"radius label changed - notification");
-}
+}*/
 @end

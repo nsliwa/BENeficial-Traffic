@@ -16,6 +16,8 @@
 #import "IncidentViewController.h"
 #import "IncidentTableViewCell.h"
 
+#import <math.h>
+
 @interface TableViewController() <IncidentManagerDelegate>//, CLLocationManagerDelegate>
 
     @property (strong, nonatomic) NSArray* incidents;
@@ -123,7 +125,8 @@
     // Return the number of rows in the section.
     // self looks at current class
     //if(section == 0)
-    return self.incidents.count;
+    NSLog(@"incidents to display: %f, %f, %f", self.incidents.count, [TrafficIncidentModel incidentLimit], MIN(self.incidents.count, [TrafficIncidentModel incidentLimit]));
+    return MIN(self.incidents.count, [TrafficIncidentModel incidentLimit]);
     //else
      //   return 1;
 }

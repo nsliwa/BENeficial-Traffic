@@ -40,6 +40,40 @@
     return _incidents;
 }
 
+
+static int incidentLimit = 10;
++(int) incidentLimit {
+    @synchronized(self) { return incidentLimit; }
+}
++(void)setIncidentLimit:(int)incidentLim {
+    @synchronized(self) { incidentLimit = incidentLim; }
+}
++(double)getIncidentLimit {
+    return incidentLimit;
+}
+
+static int severityLimit = 0;
++(double) severityLimit {
+    @synchronized(self) { return severityLimit; }
+}
++(void)setSeverityLimit:(double)severityLim {
+    @synchronized(self) { severityLimit = severityLim; }
+}
++(double)getSeverityLimit {
+    return severityLimit;
+}
+
+static int incidentTypeLimit = 0;
++(double) incidentTypeLimit {
+    @synchronized(self) { return incidentTypeLimit; }
+}
++(void)setIncidentTypeLimit:(double)incidentTypeLim {
+    @synchronized(self) { incidentTypeLimit = incidentTypeLim; }
+}
++(double)getIncidentTypeLimit {
+    return incidentTypeLimit;
+}
+
 /*
 -(CLLocationCoordinate2D)currentLocation {
     if(!_currentLocation.longitude || !_currentLocation.latitude) {
