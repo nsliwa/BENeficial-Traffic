@@ -12,6 +12,7 @@
 
 #import "IncidentViewController.h"
 #import "TableViewController.h"
+#import "MapViewController.h"
 #import "IncidentManager.h"
 #import "MapQuestCommunicator.h"
 
@@ -169,6 +170,10 @@
     if([segue.identifier isEqualToString:@"IncidentListSegue"]) {
         TableViewController *tvc = segue.destinationViewController;
         [self.navigationController pushViewController:tvc animated:YES];
+    }
+    else if([segue.identifier isEqualToString:@"IncidentMapSegue"]) {
+        MapviewController *mvc = segue.destinationViewController;
+        [self.navigationController pushViewController:mvc animated:YES];
     }
     
     /*
