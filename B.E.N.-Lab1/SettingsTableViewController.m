@@ -126,6 +126,9 @@
              action:@selector(incidentTypeChanged:)
              forControlEvents:UIControlEventValueChanged];
              */
+            
+            //incidentTypeCell.incidentType. = [_defaults integerForKey:@"incidentType"];
+            
             return incidentTypeCell;
         }
         else if(indexPath.section==2) {
@@ -135,6 +138,9 @@
             [severityCell.minimumSeveritySegment addTarget:self
                                                     action:@selector(severityChanged:)
                                           forControlEvents:UIControlEventValueChanged];
+            
+            severityCell.minimumSeveritySegment.selectedSegmentIndex = [_defaults integerForKey:@"severity"];
+            
              return severityCell;
         }
         else if(indexPath.section==4) {

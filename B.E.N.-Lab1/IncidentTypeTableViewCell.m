@@ -7,6 +7,7 @@
 //
 
 #import "IncidentTypeTableViewCell.h"
+#import "TrafficIncidentModel.h"
 
 @interface IncidentTypeTableViewCell ()
 {
@@ -37,7 +38,7 @@
     self.incidentType.dataSource = self;
     self.incidentType.delegate = self;
     
-    [self.incidentType selectRow:0 inComponent:0 animated:YES];
+    [self.incidentType selectRow:[TrafficIncidentModel incidentTypeLimit] inComponent:0 animated:YES];
 }
 
 
