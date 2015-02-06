@@ -375,7 +375,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="radiusLabel" destination="1KV-HZ-mCt" id="89y-La-4gb"/>
+                                    <outlet property="radiusLabel" destination="ACj-cG-Yn7" id="Kei-La-XWr"/>
                                     <outlet property="radiusSlider" destination="1KV-HZ-mCt" id="BCI-Il-i9l"/>
                                 </connections>
                             </tableViewCell>

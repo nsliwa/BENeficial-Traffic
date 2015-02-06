@@ -10,6 +10,7 @@
 
 @interface RadiusSettingTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UISlider *radiusSlider;
-@property (weak, nonatomic) IBOutlet UISlider *radiusLabel;
+@property (weak, nonatomic) IBOutlet UITextField *radiusLabel;
+
 
 @end

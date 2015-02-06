@@ -16,7 +16,6 @@
 
 @interface SettingsTableViewController()
 
-
 @end
 
 @implementation SettingsTableViewController
@@ -32,13 +31,13 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeRadiusLabel:)
+                                                 name:@"radiusChanged"
+                                               object:nil];
     
-    //self.radiusSlider.minimumValue = 0;
-    //self.radiusSlider.maximumValue = 20;
     
-    //self.incidentTypeSegmentControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Construction", @"Event", @"Congestion", @"Accident"]];
     
-    //[self.disableUpdateSwitch setOn:YES animated:YES];
     
 }
 
@@ -64,56 +63,74 @@
     @try {
    
     if (indexPath.section==0) {
-        RadiusSettingTableViewCell* radiusCell = nil;
+        RadiusSettingTableViewCell *radiusCell = nil;
         radiusCell = [tableView dequeueReusableCellWithIdentifier:@"radiusCell" forIndexPath:indexPath];
-        //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
+        
+        [radiusCell.radiusSlider addTarget:self
+                                    action:@selector(radiusChanged:)
+                          forControlEvents:UIControlEventTouchUpInside];
+        
         return radiusCell;
     }
     else if(indexPath.section==1) {
         NumIncidentsSettingTableViewCell* numIncidentCell = nil;
         numIncidentCell = [tableView dequeueReusableCellWithIdentifier:@"numIncidentCell" forIndexPath:indexPath];
-        //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
+        
+        
+        
         return numIncidentCell;
-        //cell = [[NumIncidentsSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"numIncidentCell"];
     }
     else if(indexPath.section==2) {
         IncidentTypeTableViewCell* incidentTypeCell = nil;
         incidentTypeCell = [tableView dequeueReusableCellWithIdentifier:@"incidentTypeCell" forIndexPath:indexPath];
         //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
         return incidentTypeCell;
-        //cell = [[IncidentTypeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"incidentTypeCell"];
     }
     else if(indexPath.section==3) {
         SeverityTableViewCell* severityCell = nil;
         severityCell = [tableView dequeueReusableCellWithIdentifier:@"severityCell" forIndexPath:indexPath];
         //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
         return severityCell;
-        //cell = [[SeverityTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"severityCell"];
     }
     else if(indexPath.section==4) {
         DisableUpdateTableViewCell* disableUpdateCell = nil;
         disableUpdateCell = [tableView dequeueReusableCellWithIdentifier:@"disableUpdateCell" forIndexPath:indexPath];
-        //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
         
-        //cell = [[DisableUpdateTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"disableUpdateCell"];
-        
-        [disableUpdateCell.disableUpdateSwitch addTarget:self action:@selector(navigationUpdaterToggled:) forControlEvents:UIControlEventTouchUpInside];
+        [disableUpdateCell.disableUpdateSwitch addTarget:self
+                                                  action:@selector(navigationUpdaterToggled:)
+                                        forControlEvents:UIControlEventTouchUpInside];
         
         return disableUpdateCell;
     }
-    else { //if(indexPath.section==5) {
+    else {
         UpdateNowTableViewCell* updateNowCell = nil;
         updateNowCell = [tableView dequeueReusableCellWithIdentifier:@"updateButtonCell" forIndexPath:indexPath];
-        //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
+        
+        
         return updateNowCell;
-        //cell = [[UpdateNowTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"updateNowCell"];
     }
     }
     @catch (NSException *exception) {
         NSLog(exception.debugDescription);
     }
     
-    //return cell;
+    
+}
+
+-(void)radiusChanged:(UISlider*)sender
+{
+    @try {
+        NSDictionary *dic = @{
+                              @"radius" : [NSNumber numberWithFloat:sender.value]
+                              };
+        
+        NSLog([dic valueForKey:@"radius"]);
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"radiusChanged" object:self userInfo:dic];
+    }
+    @catch (NSException *exception) {
+        NSLog(exception.debugDescription);
+    }
     
 }
 
