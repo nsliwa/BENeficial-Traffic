@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		493259B41A837C1700B3ABEF /* IncidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493259B31A837C1700B3ABEF /* IncidentViewController.m */; };
+		493BAA231A84614D00555A66 /* RadiusSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA221A84614D00555A66 /* RadiusSettingTableViewCell.m */; };
+		493BAA261A84623100555A66 /* NumIncidentsSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA251A84623100555A66 /* NumIncidentsSettingTableViewCell.m */; };
+		493BAA291A8462D700555A66 /* IncidentTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA281A8462D700555A66 /* IncidentTypeTableViewCell.m */; };
+		493BAA2C1A84630100555A66 /* SeverityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA2B1A84630100555A66 /* SeverityTableViewCell.m */; };
+		493BAA2F1A84635900555A66 /* DisableUpdateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA2E1A84635900555A66 /* DisableUpdateTableViewCell.m */; };
+		493BAA321A84637D00555A66 /* UpdateNowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA311A84637D00555A66 /* UpdateNowTableViewCell.m */; };
 		49456AE41A83F5F9007876D8 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49456AE31A83F5F9007876D8 /* SettingsTableViewController.m */; };
-		49B1F6D41A844F7E000916E0 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F6D31A844F7E000916E0 /* SettingsTableViewCell.m */; };
 		ADC6F79D1A8169DD00356A9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F79C1A8169DD00356A9E /* main.m */; };
 		ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F79F1A8169DD00356A9E /* AppDelegate.m */; };
 		ADC6F7A31A8169DD00356A9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7A21A8169DD00356A9E /* ViewController.m */; };
@@ -40,10 +45,20 @@
 /* Begin PBXFileReference section */
 		493259B21A837A8B00B3ABEF /* IncidentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncidentViewController.h; sourceTree = "<group>"; };
 		493259B31A837C1700B3ABEF /* IncidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncidentViewController.m; sourceTree = "<group>"; };
+		493BAA211A84614D00555A66 /* RadiusSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiusSettingTableViewCell.h; sourceTree = "<group>"; };
+		493BAA221A84614D00555A66 /* RadiusSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiusSettingTableViewCell.m; sourceTree = "<group>"; };
+		493BAA241A84623100555A66 /* NumIncidentsSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumIncidentsSettingTableViewCell.h; sourceTree = "<group>"; };
+		493BAA251A84623100555A66 /* NumIncidentsSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumIncidentsSettingTableViewCell.m; sourceTree = "<group>"; };
+		493BAA271A8462D700555A66 /* IncidentTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncidentTypeTableViewCell.h; sourceTree = "<group>"; };
+		493BAA281A8462D700555A66 /* IncidentTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncidentTypeTableViewCell.m; sourceTree = "<group>"; };
+		493BAA2A1A84630100555A66 /* SeverityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeverityTableViewCell.h; sourceTree = "<group>"; };
+		493BAA2B1A84630100555A66 /* SeverityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeverityTableViewCell.m; sourceTree = "<group>"; };
+		493BAA2D1A84635900555A66 /* DisableUpdateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisableUpdateTableViewCell.h; sourceTree = "<group>"; };
+		493BAA2E1A84635900555A66 /* DisableUpdateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisableUpdateTableViewCell.m; sourceTree = "<group>"; };
+		493BAA301A84637D00555A66 /* UpdateNowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateNowTableViewCell.h; sourceTree = "<group>"; };
+		493BAA311A84637D00555A66 /* UpdateNowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateNowTableViewCell.m; sourceTree = "<group>"; };
 		49456AE21A83F5F9007876D8 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		49456AE31A83F5F9007876D8 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
-		49B1F6D21A844F7E000916E0 /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewCell.h; sourceTree = "<group>"; };
-		49B1F6D31A844F7E000916E0 /* SettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewCell.m; sourceTree = "<group>"; };
 		ADC6F7971A8169DD00356A9E /* B.E.N.-Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B.E.N.-Lab1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC6F79B1A8169DD00356A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC6F79C1A8169DD00356A9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,8 +160,18 @@
 				ADC6F7A71A8169DD00356A9E /* Images.xcassets */,
 				ADC6F7A91A8169DD00356A9E /* LaunchScreen.xib */,
 				ADC6F79A1A8169DD00356A9E /* Supporting Files */,
-				49B1F6D21A844F7E000916E0 /* SettingsTableViewCell.h */,
-				49B1F6D31A844F7E000916E0 /* SettingsTableViewCell.m */,
+				493BAA211A84614D00555A66 /* RadiusSettingTableViewCell.h */,
+				493BAA221A84614D00555A66 /* RadiusSettingTableViewCell.m */,
+				493BAA241A84623100555A66 /* NumIncidentsSettingTableViewCell.h */,
+				493BAA251A84623100555A66 /* NumIncidentsSettingTableViewCell.m */,
+				493BAA271A8462D700555A66 /* IncidentTypeTableViewCell.h */,
+				493BAA281A8462D700555A66 /* IncidentTypeTableViewCell.m */,
+				493BAA2A1A84630100555A66 /* SeverityTableViewCell.h */,
+				493BAA2B1A84630100555A66 /* SeverityTableViewCell.m */,
+				493BAA2D1A84635900555A66 /* DisableUpdateTableViewCell.h */,
+				493BAA2E1A84635900555A66 /* DisableUpdateTableViewCell.m */,
+				493BAA301A84637D00555A66 /* UpdateNowTableViewCell.h */,
+				493BAA311A84637D00555A66 /* UpdateNowTableViewCell.m */,
 			);
 			path = "B.E.N.-Lab1";
 			sourceTree = "<group>";
@@ -277,18 +302,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493BAA2C1A84630100555A66 /* SeverityTableViewCell.m in Sources */,
 				49456AE41A83F5F9007876D8 /* SettingsTableViewController.m in Sources */,
 				ADC6F7D11A81FE3500356A9E /* MapQuestCommunicator.m in Sources */,
 				ADC6F7A31A8169DD00356A9E /* ViewController.m in Sources */,
 				ADC6F7C71A81C2BB00356A9E /* TrafficIncident.m in Sources */,
 				ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */,
-				49B1F6D41A844F7E000916E0 /* SettingsTableViewCell.m in Sources */,
+				493BAA261A84623100555A66 /* NumIncidentsSettingTableViewCell.m in Sources */,
+				493BAA321A84637D00555A66 /* UpdateNowTableViewCell.m in Sources */,
 				493259B41A837C1700B3ABEF /* IncidentViewController.m in Sources */,
+				493BAA291A8462D700555A66 /* IncidentTypeTableViewCell.m in Sources */,
+				493BAA2F1A84635900555A66 /* DisableUpdateTableViewCell.m in Sources */,
 				ADC6F7DF1A82121900356A9E /* TableViewController.m in Sources */,
 				ADC6F7E21A838C2C00356A9E /* MasterTableViewController.m in Sources */,
 				ADC6F79D1A8169DD00356A9E /* main.m in Sources */,
 				ADC6F7DA1A820A3000356A9E /* IncidentManager.m in Sources */,
 				ADC6F7C41A81AEFE00356A9E /* IncidentTableViewCell.m in Sources */,
+				493BAA231A84614D00555A66 /* RadiusSettingTableViewCell.m in Sources */,
 				ADC6F7D71A81FF7C00356A9E /* TrafficIncidentModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
