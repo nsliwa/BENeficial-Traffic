@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "TrafficIncidentModel.h"
+
 @interface CollectionViewController : UICollectionViewController
+
+//@property (strong, nonatomic) NSArray *thumbMaps;
+@property (strong, nonatomic) TrafficIncidentModel *trafficModel;
+@property (strong, nonatomic) NSMutableArray *trafficData;
 
 @end
