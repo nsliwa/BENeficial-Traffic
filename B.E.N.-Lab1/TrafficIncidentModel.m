@@ -15,9 +15,13 @@
     @property (strong, nonatomic) NSMutableArray* currentIncidents;
     @property (strong, nonatomic) NSMutableArray* tempIncidents;
 
+
+
 @end
 
+
 @implementation TrafficIncidentModel
+
 
 // static variable: holds all incidents from last API call
 //static NSMutableArray* incidents = nil;
@@ -35,6 +39,32 @@
     
     return _incidents;
 }
+
+/*
+-(CLLocationCoordinate2D)currentLocation {
+    if(!_currentLocation.longitude || !_currentLocation.latitude) {
+        _currentLocation = ((CLLocationCoordinate2D){ .latitude = 0.0, .longitude = 0.0 });
+    }
+    return _currentLocation;
+}
+
+-(CLLocationCoordinate2D)getCurrentLocation {
+    return self.currentLocation;
+}
+
+-(void)setCurrentLocation:(CLLocationCoordinate2D)coordinate {
+    @try {
+        
+    if(!_currentLocation.longitude || !_currentLocation.latitude) {
+        _currentLocation = ((CLLocationCoordinate2D){ .latitude = 0.0, .longitude = 0.0 });
+    }
+    self.currentLocation = coordinate;
+    }
+    @catch (NSException *exception) {
+        NSLog(@"ERRRRRRORRRRR: %@", exception.debugDescription);
+    }
+}
+*/
 
 -(TrafficIncident*) getIncidentWithShortDescription:(NSString*)descr {
     for(TrafficIncident* inc in self.currentIncidents) {

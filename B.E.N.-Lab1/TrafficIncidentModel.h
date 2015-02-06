@@ -12,10 +12,15 @@
 
 @interface TrafficIncidentModel : NSObject
 
+    //@property (assign) CLLocationCoordinate2D currentLocation;
+
     + (TrafficIncidentModel *)incidents;
     - (NSArray *)incidentsFromJSON:(NSData *)objectNotation error:(NSError **)error;
     - (NSArray *)getCurrentIncidents;
     -(TrafficIncident*) getIncidentWithShortDescription:(NSString*)descr;
+
+    //-(CLLocationCoordinate2D)getCurrentLocation;
+    //ß-(void)setCurrentLocation:(CLLocationCoordinate2D)coordinate;
     //+ (NSMutableArray*) currentIncidents;
 
 @end

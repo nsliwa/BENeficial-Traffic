@@ -23,7 +23,6 @@
     
     NSLog(@"Fetching in manager");
     [self.communicator searchIncidentsNearCoordinate:coordinate];
-    
 }
 
 -(void)fetchCurrentIncidents{

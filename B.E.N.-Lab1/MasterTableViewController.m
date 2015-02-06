@@ -134,7 +134,7 @@
         cell.textLabel.text = @"Incident ThumbMaps";
         //cell.detailTextLabel.text = @"More";
     }
-    else {//if(indexPath.section==3){
+    else if(indexPath.section==3){
         
         // this is for section 1:
         cell = [tableView dequeueReusableCellWithIdentifier:@"settingsCell" forIndexPath:indexPath];
@@ -164,16 +164,17 @@
     
 }
 
+/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"prepare for segue");
     
     if([segue.identifier isEqualToString:@"IncidentListSegue"]) {
         TableViewController *tvc = segue.destinationViewController;
-        [self.navigationController pushViewController:tvc animated:YES];
+        //[self.navigationController pushViewController:tvc animated:YES];
     }
     else if([segue.identifier isEqualToString:@"IncidentMapSegue"]) {
         MapViewController *mvc = segue.destinationViewController;
-        [self.navigationController pushViewController:mvc animated:YES];
+        //[self.navigationController pushViewController:mvc animated:YES];
     }
     
     /*
@@ -196,7 +197,7 @@
     {
         
     }
-     */
-}
+     *//*
+}*/
 
 @end
