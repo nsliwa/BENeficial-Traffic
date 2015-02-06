@@ -26,7 +26,8 @@
 
 -(void) viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"yaaaaaass1");
+    
+    
     //self.radiusSlider.minimumValue = 0;
     //self.radiusSlider.maximumValue = 20;
     

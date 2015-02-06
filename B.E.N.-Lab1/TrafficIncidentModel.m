@@ -53,7 +53,7 @@
 
 -(NSArray*) getCurrentIncidents {
     
-    return _currentIncidents;
+    return [_currentIncidents copy]	;
     
 }
 
