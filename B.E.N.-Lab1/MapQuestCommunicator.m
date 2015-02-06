@@ -80,8 +80,8 @@ static double radius = 10.0;
     NSLog(@"%@", urlAsString);
     
     @try {
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        return [UIImage imageWithData:imageData];
+        //NSData *imageData = [NSData dataWithContentsOfURL:url];
+        return [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
     }
     @catch (NSException *exception) {
         return nil;

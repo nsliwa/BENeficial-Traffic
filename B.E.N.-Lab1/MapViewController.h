@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CitiesViewController.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <UIScrollViewDelegate, ModalViewControllerDelegate>
+
+@property (nonatomic,retain) IBOutlet UIButton *button;
+
+//-(IBAction)changeCitiesPressed:(id)sender;
 
 @end

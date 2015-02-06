@@ -11,8 +11,9 @@
 #import "LocationParser.h"
 #import "MapQuestCommunicator.h"
 #import "IncidentManager.h"
+#import "CitiesViewController.h"
 
-@interface MapViewController () <UIScrollViewDelegate>
+@interface MapViewController ()
 
 // much easier to set up image view programatically
 //@property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -31,10 +32,32 @@
 
 @property (strong, nonatomic) NSArray* incidents;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *changeCitiesButton;
+
+
 @end
 
 
 @implementation MapViewController
+CitiesViewController *addController;
+
+/*- (IBAction)changeCitiesPressed:(id)sender {
+    addController = [[CitiesViewController alloc]
+                                           initWithNibName:@"CitiesViewController"
+                                            bundle:nil];
+    
+    
+    addController.delegate = self;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:addController];
+    
+    navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
+    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+    
+}*/
 
 -(TrafficIncidentModel*)trafficModel{
     if(!_trafficModel)
@@ -49,6 +72,16 @@
         _imageView = [[UIImageView alloc] initWithImage:[MapquestCommunicator getIncidentMap:coordinate.latitude lng:coordinate.longitude]];
     }
     return _imageView;
+}
+
+-(void)didDismissModalView {
+    NSLog(@"mapview - did dissmis modal");
+    [self presentViewController:addController animated:YES completion:nil];
+}
+
+-(void)didSelectCity:(NSString *)city {
+    CLLocationCoordinate2D coord = [MapquestCommunicator getCoordinateByLocation:city];
+    self.imageView = [[UIImageView alloc] initWithImage:[MapquestCommunicator getIncidentMap:coord.latitude lng:coord.longitude ]];
 }
 
 - (void)viewDidLoad {
@@ -67,6 +100,8 @@
     self.manager.communicator = [[MapquestCommunicator alloc] init];
     self.manager.communicator.delegate = _manager;
     self.manager.delegate = self;
+    
+    addController.delegate = self;
     
     /*
      self.locationManager.delegate = self;
@@ -89,6 +124,8 @@
                                              selector:@selector(startFetchingIncidents:)
                                                  name:@"kCLAuthorizationStatusAuthorizedWhenInUse"
                                                object:nil];
+    
+    
     
     NSLog(@"View did load");
 }

@@ -34,6 +34,7 @@
 		ADC6F7E21A838C2C00356A9E /* MasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7E11A838C2C00356A9E /* MasterTableViewController.m */; };
 		ADC6F7E51A846B9400356A9E /* LocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7E41A846B9400356A9E /* LocationParser.m */; };
 		ADC6F7E81A8498EE00356A9E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7E71A8498EE00356A9E /* MapViewController.m */; };
+		ADC6F7EE1A85468600356A9E /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7ED1A85468600356A9E /* CitiesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		ADC6F7E41A846B9400356A9E /* LocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationParser.m; sourceTree = "<group>"; };
 		ADC6F7E61A8498EE00356A9E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		ADC6F7E71A8498EE00356A9E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		ADC6F7EC1A85468600356A9E /* CitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesViewController.h; sourceTree = "<group>"; };
+		ADC6F7ED1A85468600356A9E /* CitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 		ADC6F7991A8169DD00356A9E /* B.E.N.-Lab1 */ = {
 			isa = PBXGroup;
 			children = (
+				ADC6F7EC1A85468600356A9E /* CitiesViewController.h */,
+				ADC6F7ED1A85468600356A9E /* CitiesViewController.m */,
 				ADC6F7A41A8169DD00356A9E /* Main.storyboard */,
 				ADC6F79E1A8169DD00356A9E /* AppDelegate.h */,
 				ADC6F79F1A8169DD00356A9E /* AppDelegate.m */,
@@ -333,6 +338,7 @@
 				493BAA351A849E8800555A66 /* CollectionViewController.m in Sources */,
 				493BAA321A84637D00555A66 /* UpdateNowTableViewCell.m in Sources */,
 				493259B41A837C1700B3ABEF /* IncidentViewController.m in Sources */,
+				ADC6F7EE1A85468600356A9E /* CitiesViewController.m in Sources */,
 				493BAA291A8462D700555A66 /* IncidentTypeTableViewCell.m in Sources */,
 				493BAA2F1A84635900555A66 /* DisableUpdateTableViewCell.m in Sources */,
 				ADC6F7DF1A82121900356A9E /* TableViewController.m in Sources */,
