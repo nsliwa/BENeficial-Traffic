@@ -163,12 +163,10 @@
 				ADC6F7A71A8169DD00356A9E /* Images.xcassets */,
 				ADC6F7A91A8169DD00356A9E /* LaunchScreen.xib */,
 				ADC6F79A1A8169DD00356A9E /* Supporting Files */,
-<<<<<<< HEAD
 				49B1F6D21A844F7E000916E0 /* SettingsTableViewCell.h */,
 				49B1F6D31A844F7E000916E0 /* SettingsTableViewCell.m */,
 				ADC6F7E31A846B9400356A9E /* LocationParser.h */,
 				ADC6F7E41A846B9400356A9E /* LocationParser.m */,
-=======
 				493BAA211A84614D00555A66 /* RadiusSettingTableViewCell.h */,
 				493BAA221A84614D00555A66 /* RadiusSettingTableViewCell.m */,
 				493BAA241A84623100555A66 /* NumIncidentsSettingTableViewCell.h */,
@@ -181,7 +179,6 @@
 				493BAA2E1A84635900555A66 /* DisableUpdateTableViewCell.m */,
 				493BAA301A84637D00555A66 /* UpdateNowTableViewCell.h */,
 				493BAA311A84637D00555A66 /* UpdateNowTableViewCell.m */,
->>>>>>> FETCH_HEAD
 			);
 			path = "B.E.N.-Lab1";
 			sourceTree = "<group>";
