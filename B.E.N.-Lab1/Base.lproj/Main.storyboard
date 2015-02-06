@@ -377,11 +377,21 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zc3-Hy-2xe" id="GSR-Pi-DwX">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="radiusSlider" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1KV-HZ-mCt">
-                                            <rect key="frame" x="6" y="24" width="308" height="31"/>
-                                        </slider>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Map Radius" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACj-cG-Yn7">
                                             <rect key="frame" x="28" y="5" width="97" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="radiusSlider" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="1KV-HZ-mCt">
+                                            <rect key="frame" x="44" y="25" width="227" height="31"/>
+                                        </slider>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1 mi." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqV-jt-14E">
+                                            <rect key="frame" x="8" y="25" width="48" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20 mi." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6kJ-cW-G1w">
+                                            <rect key="frame" x="272" y="25" width="97" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -503,7 +513,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-Gm-3UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="1362"/>
+            <point key="canvasLocation" x="128" y="1357"/>
         </scene>
     </scenes>
     <resources>
