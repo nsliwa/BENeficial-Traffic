@@ -97,7 +97,7 @@
         <!--Cities View Controller-->
         <scene sceneID="rdi-yy-Ozs">
             <objects>
-                <viewController id="hlb-3i-5kX" customClass="CitiesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cityViewModal" id="hlb-3i-5kX" customClass="CitiesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YMM-VO-7EU"/>
                         <viewControllerLayoutGuide type="bottom" id="fMK-kI-jH7"/>
@@ -188,13 +188,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hlb-3i-5kX" kind="modal" identifier="cityViewSegue" modalPresentationStyle="fullScreen" id="PFN-rh-1nG"/>
+                                    <action selector="changeCitiesPressed:" destination="nAs-LC-U2i" eventType="touchUpInside" id="4Bz-cB-yZ4"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="changeCitiesButton" destination="RS2-Xg-Cya" id="31I-Yj-J6E"/>
                         <outlet property="scrollView" destination="Vze-Jh-WMn" id="g6R-zY-lXE"/>
                     </connections>
                 </viewController>

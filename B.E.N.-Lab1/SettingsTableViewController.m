@@ -39,6 +39,7 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     
+    // this idea inspired by: http://code.tutsplus.com/tutorials/ios-sdk-working-with-nsuserdefaults--mobile-6039
     if (!_defaults) {
         _defaults = [NSUserDefaults standardUserDefaults];
         

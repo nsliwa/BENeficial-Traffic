@@ -17,6 +17,7 @@
 @interface CitiesViewController : UIViewController
 
 @property (nonatomic, weak) id<ModalViewControllerDelegate> delegate;
+@property (strong, nonatomic) NSString* selectedCity;
 
 @end
 

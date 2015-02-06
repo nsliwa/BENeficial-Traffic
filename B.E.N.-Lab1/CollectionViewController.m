@@ -5,6 +5,7 @@
 //  Created by ch484-mac4 on 2/6/15.
 //  Copyright (c) 2015 Team B.E.N. All rights reserved.
 //
+// much adapted from Flipped classroom 1
 
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"

@@ -53,6 +53,7 @@
     return _locationManager;
 }
 
+// majority of this function taken from http://www.appcoda.com/fetch-parse-json-ios-programming-tutorial/
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -76,6 +77,7 @@
     
 }
 
+// majority of this function taken from http://www.appcoda.com/fetch-parse-json-ios-programming-tutorial/
 #pragma mark - Notification Observer
 - (void)startFetchingIncidents:(NSNotification *)notification
 {
@@ -147,8 +149,8 @@
     return cell;
 }
 
+// The two below taken from http://www.appcoda.com/fetch-parse-json-ios-programming-tutorial/
 #pragma mark - IncidentManagerDelegate implementation
-
 -(void)didReceiveIncidents:(NSArray *)incidents {
     
     NSLog(@"did receive incidents");

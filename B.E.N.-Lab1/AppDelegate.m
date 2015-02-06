@@ -47,6 +47,7 @@ static BOOL locationEnabled = YES;
     
 }
 
+// This function (minus the Notifications) taken from http://www.appcoda.com/how-to-get-current-location-iphone-user/
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.locationManager = [[CLLocationManager alloc] init];
@@ -74,8 +75,8 @@ static BOOL locationEnabled = YES;
     return YES;
 }
 
+// The below two functions adapted from http://www.appcoda.com/how-to-get-current-location-iphone-user/
 #pragma mark - CLLocationManagerDelegate
-
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {

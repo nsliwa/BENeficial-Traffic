@@ -5,10 +5,12 @@
 //  Created by Nicole Sliwa on 2/6/15.
 //  Copyright (c) 2015 Team B.E.N. All rights reserved.
 //
+//// modal view stuff from: http://useyourloaf.com/blog/2010/05/03/ipad-modal-view-controllers.html, http://useyourloaf.com/blog/2012/10/08/presenting-view-controllers.html
+//
 
 #import "CitiesViewController.h"
 
-@interface CitiesViewController()<UITableViewDelegate>
+@interface CitiesViewController()<UITableViewDataSource, UITableViewDelegate>
     @property (strong, nonatomic) UITableViewCell* city;
 @property (weak, nonatomic) IBOutlet UITableView *cities;
 @end
@@ -20,10 +22,17 @@
     [self.delegate didDismissModalView];
 }
 
+-(NSString *)selectedCity {
+    if(!_selectedCity)
+        _selectedCity = @"";
+    
+    return _selectedCity;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *selectedCell=[tableView cellForRowAtIndexPath:indexPath];
-    [self.delegate didSelectCity:selectedCell.textLabel.text];
+    self.selectedCity = selectedCell.textLabel.text;
     
     [self.delegate didDismissModalView];
     
@@ -37,6 +46,7 @@
                                               initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                               target:self
                                               action:@selector(dismissView:)];
+    self.cities.dataSource = self;
     self.cities.delegate = self;
     
 }

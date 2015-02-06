@@ -5,6 +5,10 @@
 //  Created by Nicole Sliwa on 2/6/15.
 //  Copyright (c) 2015 Team B.E.N. All rights reserved.
 //
+// Much adapted from flipped-classroom lectures
+// IncidentManagerDelegate functions from: http://code.tutsplus.com/tutorials/ios-sdk-working-with-nsuserdefaults--mobile-6039
+// modal view stuff from: http://useyourloaf.com/blog/2010/05/03/ipad-modal-view-controllers.html, http://useyourloaf.com/blog/2012/10/08/presenting-view-controllers.html
+//
 
 #import "MapViewController.h"
 #import "TrafficIncidentModel.h"
@@ -32,7 +36,8 @@
 
 @property (strong, nonatomic) NSArray* incidents;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *changeCitiesButton;
+
+
 
 
 @end
@@ -41,23 +46,32 @@
 @implementation MapViewController
 CitiesViewController *addController;
 
-/*- (IBAction)changeCitiesPressed:(id)sender {
-    addController = [[CitiesViewController alloc]
-                                           initWithNibName:@"CitiesViewController"
-                                            bundle:nil];
+- (IBAction)changeCitiesPressed:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    addController = [storyboard instantiateViewControllerWithIdentifier:@"cityViewModal"];
     
     
     addController.delegate = self;
     
-    UINavigationController *navigationController = [[UINavigationController alloc]
-                                                    initWithRootViewController:addController];
+    [addController setModalPresentationStyle:UIModalPresentationFullScreen];
+    [self presentViewController:addController animated:YES completion:nil];
+//    
+//    addController = [[CitiesViewController alloc]
+//                                           initWithNibName:@"cityViewModal"
+//                                            bundle:nil];
     
-    navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
-    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    [self presentViewController:navigationController animated:YES completion:nil];
     
-}*/
+//    
+//    UINavigationController *navigationController = [[UINavigationController alloc]
+//                                                    initWithRootViewController:addController];
+    
+//    navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
+//    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//
+//    [self presentViewController:navigationController animated:YES completion:nil];
+    
+}
 
 -(TrafficIncidentModel*)trafficModel{
     if(!_trafficModel)
@@ -76,7 +90,18 @@ CitiesViewController *addController;
 
 -(void)didDismissModalView {
     NSLog(@"mapview - did dissmis modal");
-    [self presentViewController:addController animated:YES completion:nil];
+    
+    NSString* city = addController.selectedCity;
+    if(![city isEqualToString:@""]) {
+        CLLocationCoordinate2D coord = [MapquestCommunicator getCoordinateByLocation:city];
+        self.imageView = [[UIImageView alloc] initWithImage:[MapquestCommunicator getIncidentMap:coord.latitude lng:coord.longitude ]];
+        
+        
+        
+        NSLog(@"got the city!!!!!, %f, %f", coord.latitude, coord.longitude);
+    }
+        
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)didSelectCity:(NSString *)city {

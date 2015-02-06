@@ -26,6 +26,8 @@
                 
                 coordinate.latitude = 0.00;
                 coordinate.longitude = 0.00;
+                
+                NSLog(@"internal error in parser!!!");
                 return coordinate;
             }
             
@@ -67,6 +69,7 @@
         @catch (NSException *exception) {
             coordinate.latitude = 0.00;
             coordinate.longitude = 0.00;
+            NSLog(@"exception in parser");
             return coordinate;
         }
         

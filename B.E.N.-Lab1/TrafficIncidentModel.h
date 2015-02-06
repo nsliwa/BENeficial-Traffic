@@ -15,7 +15,10 @@
     //@property (assign) CLLocationCoordinate2D currentLocation;
 
     + (TrafficIncidentModel *)incidents;
+
+    // general idea for function from here: http://www.appcoda.com/fetch-parse-json-ios-programming-tutorial/
     - (NSArray *)incidentsFromJSON:(NSData *)objectNotation error:(NSError **)error;
+
     - (NSArray *)getCurrentIncidents;
     -(TrafficIncident*) getIncidentWithShortDescription:(NSString*)descr;
 

@@ -147,8 +147,6 @@
 		ADC6F7991A8169DD00356A9E /* B.E.N.-Lab1 */ = {
 			isa = PBXGroup;
 			children = (
-				ADC6F7EC1A85468600356A9E /* CitiesViewController.h */,
-				ADC6F7ED1A85468600356A9E /* CitiesViewController.m */,
 				ADC6F7A41A8169DD00356A9E /* Main.storyboard */,
 				ADC6F79E1A8169DD00356A9E /* AppDelegate.h */,
 				ADC6F79F1A8169DD00356A9E /* AppDelegate.m */,
@@ -161,8 +159,8 @@
 				ADC6F7CF1A81FE3500356A9E /* MapQuestCommunicator.h */,
 				ADC6F7D01A81FE3500356A9E /* MapQuestCommunicator.m */,
 				ADC6F7DB1A820C1A00356A9E /* MapQuestCommunicatorDelegate.h */,
-				ADC6F7D91A820A3000356A9E /* IncidentManager.m */,
 				ADC6F7D81A820A3000356A9E /* IncidentManager.h */,
+				ADC6F7D91A820A3000356A9E /* IncidentManager.m */,
 				ADC6F7DC1A820CDB00356A9E /* IncidentManagerDelegate.h */,
 				ADC6F7E01A838C2C00356A9E /* MasterTableViewController.h */,
 				ADC6F7E11A838C2C00356A9E /* MasterTableViewController.m */,
@@ -178,6 +176,8 @@
 				ADC6F7E71A8498EE00356A9E /* MapViewController.m */,
 				493BAA331A849E8800555A66 /* CollectionViewController.h */,
 				493BAA341A849E8800555A66 /* CollectionViewController.m */,
+				ADC6F7EC1A85468600356A9E /* CitiesViewController.h */,
+				ADC6F7ED1A85468600356A9E /* CitiesViewController.m */,
 				ADC6F7C21A81AEFE00356A9E /* IncidentTableViewCell.h */,
 				ADC6F7C31A81AEFE00356A9E /* IncidentTableViewCell.m */,
 				493BAA211A84614D00555A66 /* RadiusSettingTableViewCell.h */,

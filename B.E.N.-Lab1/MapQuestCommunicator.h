@@ -14,9 +14,9 @@
 @protocol MapquestCommunicatorDelagate;
  
 @interface MapquestCommunicator : NSObject
+    // skeleton for below two functions from here: http://www.appcoda.com/fetch-parse-json-ios-programming-tutorial/
     // keeps track of the delegate
     @property (weak, nonatomic) id<MapquestCommunicatorDelagate> delegate;
-
     // searches for incidents near a specific location
     -(void) searchIncidentsNearCoordinate:(CLLocationCoordinate2D) coordinate;
 

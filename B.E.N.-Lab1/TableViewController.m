@@ -49,6 +49,7 @@ NSPredicate *predicate_severity;
     return _manager;
 }
 
+// majority of this function taken from http://www.appcoda.com/fetch-parse-json-ios-programming-tutorial/
 - (CLLocationManager *)locationManager
 {
     if (_locationManager) {
@@ -76,6 +77,7 @@ NSPredicate *predicate_severity;
 }
  */
 
+// Notification part of this function taken from http://www.appcoda.com/fetch-parse-json-ios-programming-tutorial/
 -(void)viewDidLoad {
     [super viewDidLoad];
     
