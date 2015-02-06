@@ -359,8 +359,13 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zc3-Hy-2xe" id="GSR-Pi-DwX">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1KV-HZ-mCt">
-                                            <rect key="frame" x="101" y="8" width="118" height="31"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Map Radius" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACj-cG-Yn7">
+                                            <rect key="frame" x="17" y="-6" width="97" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="radiusSlider" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1KV-HZ-mCt">
+                                            <rect key="frame" x="6" y="12" width="308" height="31"/>
                                         </slider>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -370,9 +375,14 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nGu-MT-xZC" id="1H4-ad-UqX">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="nh8-Xr-h0E">
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" restorationIdentifier="numIncidentsStepper" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="nh8-Xr-h0E">
                                             <rect key="frame" x="194" y="12" width="94" height="29"/>
                                         </stepper>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="numIncidentsLabel" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NumIncidentsLabel" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Of-4R-ODc" userLabel="NumIncidentsLabel">
+                                            <rect key="frame" x="8" y="13" width="160" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -381,8 +391,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZbI-gR-bqv" id="Wab-kg-DXH">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T99-XI-b3a">
-                                            <rect key="frame" x="-35" y="14" width="390" height="29"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="incidentTypeSegmentControl" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T99-XI-b3a">
+                                            <rect key="frame" x="7" y="14" width="307" height="29"/>
                                             <segments>
                                                 <segment title="Construction"/>
                                                 <segment title="Event"/>
@@ -398,9 +408,14 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y7Z-hJ-vG2" id="9Qj-zg-Uxi">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-dW-fbx">
-                                            <rect key="frame" x="0.0" y="-54" width="320" height="162"/>
+                                        <pickerView contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="severityPicker" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-dW-fbx">
+                                            <rect key="frame" x="155" y="-52" width="165" height="162"/>
                                         </pickerView>
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Minimum severity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UiR-0M-Cek">
+                                            <rect key="frame" x="30" y="12" width="139" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -409,9 +424,14 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zbf-iz-Vey" id="ajq-5t-VEy">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgi-aZ-6Js">
-                                            <rect key="frame" x="210" y="11" width="51" height="31"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" restorationIdentifier="disableUpdateSwitch" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgi-aZ-6Js">
+                                            <rect key="frame" x="226" y="12" width="51" height="31"/>
                                         </switch>
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Disable update" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CDE-H1-0R1">
+                                            <rect key="frame" x="40" y="12" width="118" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -420,7 +440,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q3e-QB-H3c" id="lfm-YK-i3S">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOf-c6-JPB">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="updateNowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOf-c6-JPB">
                                             <rect key="frame" x="115" y="12" width="90" height="30"/>
                                             <state key="normal" title="Update Now!">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -436,10 +456,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2cJ-LM-gYe"/>
+                    <connections>
+                        <outlet property="disableUpdateSwitch" destination="Fgi-aZ-6Js" id="SXV-Rs-JcE"/>
+                        <outlet property="incidentTypeSegmentControl" destination="T99-XI-b3a" id="bq4-HX-onI"/>
+                        <outlet property="numIncidentsLabel" destination="0Of-4R-ODc" id="SQc-Ix-rQ7"/>
+                        <outlet property="numIncidentsStepper" destination="nh8-Xr-h0E" id="b71-tw-Omd"/>
+                        <outlet property="radiusSlider" destination="GSR-Pi-DwX" id="8Ys-Td-GRI"/>
+                        <outlet property="severityPicker" destination="Rfe-dW-fbx" id="DtG-Rw-w8H"/>
+                        <outlet property="updateNowButton" destination="kOf-c6-JPB" id="hY4-TX-mq5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-Gm-3UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="1378"/>
+            <point key="canvasLocation" x="128" y="1367"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
