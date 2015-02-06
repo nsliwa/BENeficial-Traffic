@@ -21,6 +21,11 @@
 @end
 
 @implementation AppDelegate
+
+static BOOL locationEnabled = YES;
++(BOOL) locationEnabled {
+    @synchronized(self) { return locationEnabled; }
+}
 /*
 -(NSTimer*) timer {
     
@@ -94,12 +99,14 @@
 
 - (void)_turnOnLocationManager {
     [self.locationManager startUpdatingLocation];
+    locationEnabled = YES;
     
     NSLog(@"turn on location manager - timer");
 }
 
 - (void)turnOnLocationManager:(NSNotification *)notification {
     [self.locationManager startUpdatingLocation];
+    locationEnabled = YES;
     
     NSLog(@"turn on location manager - notification");
 }
@@ -115,6 +122,7 @@
 
 - (void)turnOffLocationManager:(NSNotification *)notification {
     [self.timer invalidate];
+    locationEnabled = NO;
     
     NSLog(@"turn off location manager - notification");
 }

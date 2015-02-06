@@ -15,6 +15,7 @@
 #import "UpdateNowTableViewCell.h"
 #import "MapQuestCommunicator.h"
 #import "TrafficIncidentModel.h"
+#import "AppDelegate.h"
 
 @interface SettingsTableViewController()
 
@@ -45,11 +46,13 @@
         NSNumber* numIncidents = [NSNumber numberWithInt:[TrafficIncidentModel  incidentLimit]];
         NSNumber* incidentType = [NSNumber numberWithInt:[TrafficIncidentModel incidentTypeLimit]];
         NSNumber* severity = [NSNumber numberWithInt:[TrafficIncidentModel severityLimit]];
+        NSNumber* location = [NSNumber numberWithBool:[AppDelegate locationEnabled]];
         
         [_defaults setObject:radius forKey:@"radius"];
         [_defaults setObject:numIncidents forKey:@"numIncidents"];
         [_defaults setObject:incidentType forKey:@"incidentType"];
         [_defaults setObject:severity forKey:@"severity"];
+        [_defaults setObject:location forKey:@"location"];
         
     }
     
@@ -150,6 +153,9 @@
             [disableUpdateCell.disableUpdateSwitch addTarget:self
                                                       action:@selector(navigationUpdaterToggled:)
                                             forControlEvents:UIControlEventTouchUpInside];
+            NSLog(@"Boolean is %d", [_defaults boolForKey:@"location"]);
+            
+            disableUpdateCell.disableUpdateSwitch.on = [_defaults boolForKey:@"location"];
             
             return disableUpdateCell;
         }
@@ -173,7 +179,6 @@
 
 -(IBAction)radiusChanged:(UISlider*)sender
 {
-    NSNumber* newRadius = [NSNumber numberWithFloat:sender.value];
     [MapquestCommunicator setMapRadius:sender.value];
     /*[_defaults removeObjectForKey:@"radius"];
      [_defaults setObject:newRadius forKey:@"radius"];
