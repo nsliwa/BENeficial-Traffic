@@ -78,6 +78,8 @@
         _numIncidentCell = nil;
         _numIncidentCell = [tableView dequeueReusableCellWithIdentifier:@"numIncidentCell" forIndexPath:indexPath];
         
+        _numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)_numIncidentCell.numIncidentsStepper.value];
+        
         [_numIncidentCell.numIncidentsStepper addTarget:self
                                                  action:@selector(stepperChanged:)
                                        forControlEvents:UIControlEventTouchUpInside];
@@ -140,7 +142,7 @@
 }
 
 -(void)stepperChanged:(UIStepper*)sender{
-    _numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Incidents: %d", (int)sender.value];
+    _numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)sender.value];
     @try {
         
         NSDictionary *dic = @{
