@@ -10,5 +10,6 @@
 
 @interface RadiusSettingTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UISlider *radiusSlider;
+@property (weak, nonatomic) IBOutlet UISlider *radiusLabel;
 
 @end

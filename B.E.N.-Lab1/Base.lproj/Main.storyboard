@@ -79,7 +79,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="WaU-lL-G3t" kind="push" identifier="SettingsSegue" id="A39-Bt-NDk"/>
+                                    <segue destination="WaU-lL-G3t" kind="push" id="q3o-zN-X1p"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -354,7 +354,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zc3-Hy-2xe" customClass="RadiusSettingTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="radiusCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="radiusCell" id="zc3-Hy-2xe" customClass="RadiusSettingTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zc3-Hy-2xe" id="GSR-Pi-DwX">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -370,10 +370,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="radiusLabel" destination="1KV-HZ-mCt" id="89y-La-4gb"/>
                                     <outlet property="radiusSlider" destination="1KV-HZ-mCt" id="BCI-Il-i9l"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nGu-MT-xZC" customClass="NumIncidentsSettingTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="numIncidentCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="numIncidentCell" id="nGu-MT-xZC" customClass="NumIncidentsSettingTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nGu-MT-xZC" id="1H4-ad-UqX">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -393,7 +394,7 @@
                                     <outlet property="numIncidentsStepper" destination="nh8-Xr-h0E" id="C9P-Y2-u8F"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZbI-gR-bqv" customClass="IncidentTypeTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="incidentTypeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="incidentTypeCell" id="ZbI-gR-bqv" customClass="IncidentTypeTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZbI-gR-bqv" id="Wab-kg-DXH">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -413,7 +414,7 @@
                                     <outlet property="incidentTypeSegmentControl" destination="T99-XI-b3a" id="lMG-Km-fQJ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Y7Z-hJ-vG2" customClass="SeverityTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="severityCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="severityCell" id="Y7Z-hJ-vG2" customClass="SeverityTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y7Z-hJ-vG2" id="9Qj-zg-Uxi">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -432,7 +433,7 @@
                                     <outlet property="severityPicker" destination="Rfe-dW-fbx" id="e7s-CJ-e2T"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zbf-iz-Vey" customClass="DisableUpdateTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="disableUpdateCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="disableUpdateCell" id="zbf-iz-Vey" customClass="DisableUpdateTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zbf-iz-Vey" id="ajq-5t-VEy">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -451,7 +452,7 @@
                                     <outlet property="disableUpdateSwitch" destination="Fgi-aZ-6Js" id="yUL-4f-Swf"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q3e-QB-H3c" customClass="UpdateNowTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="updateButtonCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateButtonCell" id="q3e-QB-H3c" customClass="UpdateNowTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q3e-QB-H3c" id="lfm-YK-i3S">
                                     <autoresizingMask key="autoresizingMask"/>
