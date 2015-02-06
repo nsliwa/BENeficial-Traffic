@@ -34,7 +34,7 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(changeRadiusLabel:)
+                                             selector:@selector(changedRadiusLabel:)
                                                  name:@"radiusChanged"
                                                object:nil];
     
@@ -170,4 +170,10 @@
     }
 }
 
+
+- (void)changedRadiusLabel:(NSNotification *)notification {
+    //[self.locationManager startUpdatingLocation];
+    
+    NSLog(@"radius label changed - notification");
+}
 @end
