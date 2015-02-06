@@ -354,7 +354,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zc3-Hy-2xe">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zc3-Hy-2xe" customClass="RadiusSettingTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zc3-Hy-2xe" id="GSR-Pi-DwX">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -369,8 +369,11 @@
                                         </slider>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="radiusSlider" destination="1KV-HZ-mCt" id="BCI-Il-i9l"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nGu-MT-xZC">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nGu-MT-xZC" customClass="NumIncidentsSettingTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nGu-MT-xZC" id="1H4-ad-UqX">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -385,8 +388,12 @@
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="numIncidentsLabel" destination="0Of-4R-ODc" id="uX2-8g-shq"/>
+                                    <outlet property="numIncidentsStepper" destination="nh8-Xr-h0E" id="C9P-Y2-u8F"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZbI-gR-bqv">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZbI-gR-bqv" customClass="IncidentTypeTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZbI-gR-bqv" id="Wab-kg-DXH">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -402,8 +409,11 @@
                                         </segmentedControl>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="incidentTypeSegmentControl" destination="T99-XI-b3a" id="lMG-Km-fQJ"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Y7Z-hJ-vG2">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Y7Z-hJ-vG2" customClass="SeverityTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y7Z-hJ-vG2" id="9Qj-zg-Uxi">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -418,8 +428,11 @@
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="severityPicker" destination="Rfe-dW-fbx" id="e7s-CJ-e2T"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zbf-iz-Vey">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zbf-iz-Vey" customClass="DisableUpdateTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zbf-iz-Vey" id="ajq-5t-VEy">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -434,8 +447,11 @@
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="disableUpdateSwitch" destination="Fgi-aZ-6Js" id="yUL-4f-Swf"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q3e-QB-H3c">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q3e-QB-H3c" customClass="UpdateNowTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q3e-QB-H3c" id="lfm-YK-i3S">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -448,6 +464,9 @@
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="updateNowButton" destination="kOf-c6-JPB" id="e7j-SN-eMz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -456,15 +475,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2cJ-LM-gYe"/>
-                    <connections>
-                        <outlet property="disableUpdateSwitch" destination="Fgi-aZ-6Js" id="SXV-Rs-JcE"/>
-                        <outlet property="incidentTypeSegmentControl" destination="T99-XI-b3a" id="bq4-HX-onI"/>
-                        <outlet property="numIncidentsLabel" destination="0Of-4R-ODc" id="SQc-Ix-rQ7"/>
-                        <outlet property="numIncidentsStepper" destination="nh8-Xr-h0E" id="b71-tw-Omd"/>
-                        <outlet property="radiusSlider" destination="GSR-Pi-DwX" id="8Ys-Td-GRI"/>
-                        <outlet property="severityPicker" destination="Rfe-dW-fbx" id="DtG-Rw-w8H"/>
-                        <outlet property="updateNowButton" destination="kOf-c6-JPB" id="hY4-TX-mq5"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-Gm-3UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

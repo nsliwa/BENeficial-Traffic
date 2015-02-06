@@ -8,16 +8,6 @@
 
 #import "SettingsTableViewController.h"
 
-@interface SettingsTableViewController () <UIPickerViewDelegate>
-    @property (weak, nonatomic) IBOutlet UISlider *radiusSlider;
-    @property (weak, nonatomic) IBOutlet UIStepper *numIncidentsStepper;
-    @property (weak, nonatomic) IBOutlet UITextField *numIncidentsLabel;
-    @property (weak, nonatomic) IBOutlet UISegmentedControl *incidentTypeSegmentControl;
-    @property (weak, nonatomic) IBOutlet UIPickerView *severityPicker;
-    @property (weak, nonatomic) IBOutlet UISwitch *disableUpdateSwitch;
-    @property (weak, nonatomic) IBOutlet UIButton *updateNowButton;
-@end
-
 @implementation SettingsTableViewController
 
 /*- (IBAction)sliderChanged:(UISlider *)sender {
