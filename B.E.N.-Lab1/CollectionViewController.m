@@ -24,7 +24,7 @@
         _thumbMaps.
     }
 }*/
-
+#pragma mark <UICollectionViewDataSource>
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSLog(@"counting.............");
     return self.trafficModel.getCurrentIncidents.count;
@@ -64,17 +64,36 @@
     }
 }*/
 
-#pragma mark <UICollectionViewDataSource>
 
-/*- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+
+#pragma mark - IncidentManagerDelegate implementation
+/*
+-(void)didReceiveIncidents:(NSArray *)incidents {
     
-    // Configure the cell
+    NSLog(@"did receive incidents");
+    _incidents = incidents;
+    [self.tableView reloadData];
+    NSLog(@"did load incidents");
     
-    cell.imageView.image = [self.myImageModel getImageWithIndex:(int)indexPath.row];
-    //cell.imageView.image = [self.myImageModel getImageWithName:self.myImageModel.imageNames[indexPath.row]];
+}
+
+-(void)fetchingIncidentsFailedWithError:(NSError *)error {
     
-    return cell;
-}*/
+    NSLog(@"Error %@; %@", error, [error localizedDescription]);
+    
+}
+*/
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"prepare for segue");
+    
+    if([segue.identifier isEqualToString:@"sequeFromCollectionToIncident"]) {
+        CollectionViewCell* cell = (CollectionViewCell*)sender;
+        IncidentViewController *ivc =  [segue destinationViewController];
+        
+        ivc.incident = [self.trafficModel getIncidentWithShortDescription:cell.descView.text];
+        
+        //[self.navigationController pushViewController:ivc animated:YES];
+    }
+}
 
 @end
