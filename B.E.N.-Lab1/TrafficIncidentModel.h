@@ -21,15 +21,15 @@
 
     +(int) incidentLimit;
     +(void)setIncidentLimit:(int)incidentLim;
-    +(double)getIncidentLimit;
+    +(int)getIncidentLimit;
 
-    +(double) severityLimit;
-    +(void)setSeverityLimit:(double)severityLim;
-    +(double)getSeverityLimit;
+    +(int) severityLimit;
+    +(void)setSeverityLimit:(int)severityLim;
+    +(int)getSeverityLimit;
 
-    +(double) incidentTypeLimit;
-    +(void)setIncidentTypeLimit:(double)incidentTypeLim;
-    +(double)getIncidentTypeLimit;
+    +(int) incidentTypeLimit;
+    +(void)setIncidentTypeLimit:(int)incidentTypeLim;
+    +(int)getIncidentTypeLimit;
     //-(CLLocationCoordinate2D)getCurrentLocation;
     //ß-(void)setCurrentLocation:(CLLocationCoordinate2D)coordinate;
     //+ (NSMutableArray*) currentIncidents;

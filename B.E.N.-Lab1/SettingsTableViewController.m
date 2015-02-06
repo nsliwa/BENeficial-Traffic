@@ -20,6 +20,8 @@
 
 @property NumIncidentsSettingTableViewCell* numIncidentCell;
 
+
+
 @end
 
 @implementation SettingsTableViewController
@@ -31,19 +33,19 @@
     //self.numIncidentsLabel.text = [NSString stringWithFormat:@"%f", sender.value];
     
 }*/
-/*
+
 -(void) viewDidLoad {
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(changedRadiusLabel:)
-                                                 name:@"radiusChanged"
+                                             selector:@selector(changedIncidentType:)
+                                                 name:@"incidentTypeSelected"
                                                object:nil];
     
     
     
     
-}*/
+}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -74,30 +76,36 @@
         return radiusCell;
     }
     else if(indexPath.section==1) {
-        _numIncidentCell = nil;
-        _numIncidentCell = [tableView dequeueReusableCellWithIdentifier:@"numIncidentCell" forIndexPath:indexPath];
+        NumIncidentsSettingTableViewCell *numIncidentCell = nil;
+        numIncidentCell = [tableView dequeueReusableCellWithIdentifier:@"numIncidentCell" forIndexPath:indexPath];
         
-        _numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)_numIncidentCell.numIncidentsStepper.value];
+        numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)numIncidentCell.numIncidentsStepper.value];
         
-        [_numIncidentCell.numIncidentsStepper addTarget:self
+        [numIncidentCell.numIncidentsStepper addTarget:self
                                                  action:@selector(stepperChanged:)
                                        forControlEvents:UIControlEventTouchUpInside];
         
         
-        return _numIncidentCell;
+        return numIncidentCell;
     }
     else if(indexPath.section==3) {
         IncidentTypeTableViewCell* incidentTypeCell = nil;
         
         incidentTypeCell = [tableView dequeueReusableCellWithIdentifier:@"incidentTypeCell" forIndexPath:indexPath];
-        
+        /*
+        [incidentTypeCell.incidentType  addTarget:self
+                                                 action:@selector(incidentTypeChanged:)
+                                       forControlEvents:UIControlEventValueChanged];
+        */
         return incidentTypeCell;
     }
     else if(indexPath.section==2) {
         SeverityTableViewCell* severityCell = nil;
         severityCell = [tableView dequeueReusableCellWithIdentifier:@"severityCell" forIndexPath:indexPath];
         
-        
+        [severityCell.minimumSeveritySegment addTarget:self
+                                                 action:@selector(severityChanged:)
+                                       forControlEvents:UIControlEventTouchUpInside];
         
         return severityCell;
     }
@@ -115,18 +123,21 @@
         UpdateNowTableViewCell* updateNowCell = nil;
         updateNowCell = [tableView dequeueReusableCellWithIdentifier:@"updateButtonCell" forIndexPath:indexPath];
         
+        [updateNowCell.updateNowButton addTarget:self
+                                                 action:@selector(updateNowPressed:)
+                                       forControlEvents:UIControlEventTouchUpInside];
         
         return updateNowCell;
     }
     }
     @catch (NSException *exception) {
-        NSLog(exception.debugDescription);
+        NSLog(@"EXCEEEPPPTION: %@", exception.debugDescription);
     }
     
     
 }
 
--(void)radiusChanged:(UISlider*)sender
+-(IBAction)radiusChanged:(UISlider*)sender
 {
     [MapquestCommunicator setMapRadius:sender.value];
     NSLog(@"radius val: %f", [MapquestCommunicator radius]);
@@ -146,7 +157,7 @@
     
 }
 
--(void)stepperChanged:(UIStepper*)sender{
+-(IBAction)stepperChanged:(UIStepper*)sender{
     _numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)sender.value];
     
     [TrafficIncidentModel setIncidentLimit:(int)sender.value];
@@ -168,7 +179,7 @@
      */
 }
 
--(void)navigationUpdaterToggled:(UISwitch*)sender
+-(IBAction)navigationUpdaterToggled:(UISwitch*)sender
 {
     if (sender.on) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"turnOnLocationManager" object:self];
@@ -179,11 +190,40 @@
     }
 }
 
-/*
-- (void)changedRadiusLabel:(NSNotification *)notification {
-    //[self.locationManager startUpdatingLocation];
-    [MapquestCommunicator setMapRadius:[[notification.userInfo valueForKey:@"radius"] floatValue]];
+-(IBAction)severityChanged:(UIStepper*)sender{
+    //_numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)sender.value];
     
-    NSLog(@"radius label changed - notification");
-}*/
+    [TrafficIncidentModel setSeverityLimit:(int)sender.value];
+    NSLog(@"severity limit val: %d, %d", (int)sender.value, [TrafficIncidentModel severityLimit]);
+
+}
+/*
+-(IBAction)incidentTypeChanged:(UIStepper*)sender{
+    //_numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)sender.value];
+    
+    [TrafficIncidentModel setIncidentTypeLimit:(int)sender.value];
+    NSLog(@"incident type limit val: %d, %d", (int)sender.value, [TrafficIncidentModel incidentTypeLimit]);
+    
+}
+*/
+
+-(IBAction)updateNowPressed:(UIStepper*)sender{
+    //_numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)sender.value];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"turnOffLocationManager" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"turnOnLocationManager" object:self];
+    
+    NSLog(@"button pressed!!!!");
+    
+}
+
+
+- (void)changedIncidentType:(NSNotification *)notification {
+    //[self.locationManager startUpdatingLocation];
+    
+    [TrafficIncidentModel setIncidentTypeLimit:[[notification.userInfo valueForKey:@"radius"] floatValue]];
+
+    NSLog(@"incident type limit val: %d, %d", [[notification.userInfo valueForKey:@"radius"] floatValue], [TrafficIncidentModel incidentTypeLimit]);
+
+}
 @end
