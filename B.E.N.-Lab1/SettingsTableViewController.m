@@ -14,6 +14,11 @@
 #import "DisableUpdateTableViewCell.h"
 #import "UpdateNowTableViewCell.h"
 
+@interface SettingsTableViewController()
+
+
+@end
+
 @implementation SettingsTableViewController
 
 /*- (IBAction)sliderChanged:(UISlider *)sender {
@@ -37,9 +42,12 @@
     
 }
 
+-(void) viewDidAppear:(BOOL)animated{
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    NSLog(@"yaaaaaass2");
     return 6;
 }
 
@@ -47,13 +55,11 @@
     // Return the number of rows in the section.
     // self looks at current class
     //if(section == 0)
-    NSLog(@"yaaaaaass3");
     return 1;
     //else
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"I'm in!-----------------------------------------------------");
     //UITableViewCell* cell = nil;
     @try {
    

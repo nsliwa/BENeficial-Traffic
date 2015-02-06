@@ -14,6 +14,8 @@
 		493BAA2C1A84630100555A66 /* SeverityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA2B1A84630100555A66 /* SeverityTableViewCell.m */; };
 		493BAA2F1A84635900555A66 /* DisableUpdateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA2E1A84635900555A66 /* DisableUpdateTableViewCell.m */; };
 		493BAA321A84637D00555A66 /* UpdateNowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA311A84637D00555A66 /* UpdateNowTableViewCell.m */; };
+		493BAA351A849E8800555A66 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA341A849E8800555A66 /* CollectionViewController.m */; };
+		493BAA381A849F9B00555A66 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 493BAA371A849F9B00555A66 /* CollectionViewCell.m */; };
 		49456AE41A83F5F9007876D8 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49456AE31A83F5F9007876D8 /* SettingsTableViewController.m */; };
 		ADC6F79D1A8169DD00356A9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F79C1A8169DD00356A9E /* main.m */; };
 		ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F79F1A8169DD00356A9E /* AppDelegate.m */; };
@@ -59,6 +61,10 @@
 		493BAA2E1A84635900555A66 /* DisableUpdateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisableUpdateTableViewCell.m; sourceTree = "<group>"; };
 		493BAA301A84637D00555A66 /* UpdateNowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateNowTableViewCell.h; sourceTree = "<group>"; };
 		493BAA311A84637D00555A66 /* UpdateNowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateNowTableViewCell.m; sourceTree = "<group>"; };
+		493BAA331A849E8800555A66 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		493BAA341A849E8800555A66 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		493BAA361A849F9B00555A66 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		493BAA371A849F9B00555A66 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		49456AE21A83F5F9007876D8 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		49456AE31A83F5F9007876D8 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		ADC6F7971A8169DD00356A9E /* B.E.N.-Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B.E.N.-Lab1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +188,10 @@
 				493BAA311A84637D00555A66 /* UpdateNowTableViewCell.m */,
 				ADC6F7E61A8498EE00356A9E /* MapViewController.h */,
 				ADC6F7E71A8498EE00356A9E /* MapViewController.m */,
+				493BAA331A849E8800555A66 /* CollectionViewController.h */,
+				493BAA341A849E8800555A66 /* CollectionViewController.m */,
+				493BAA361A849F9B00555A66 /* CollectionViewCell.h */,
+				493BAA371A849F9B00555A66 /* CollectionViewCell.m */,
 			);
 			path = "B.E.N.-Lab1";
 			sourceTree = "<group>";
@@ -320,6 +330,7 @@
 				ADC6F7A01A8169DD00356A9E /* AppDelegate.m in Sources */,
 				493BAA261A84623100555A66 /* NumIncidentsSettingTableViewCell.m in Sources */,
 				ADC6F7E81A8498EE00356A9E /* MapViewController.m in Sources */,
+				493BAA351A849E8800555A66 /* CollectionViewController.m in Sources */,
 				493BAA321A84637D00555A66 /* UpdateNowTableViewCell.m in Sources */,
 				493259B41A837C1700B3ABEF /* IncidentViewController.m in Sources */,
 				493BAA291A8462D700555A66 /* IncidentTypeTableViewCell.m in Sources */,
@@ -331,6 +342,7 @@
 				ADC6F7E51A846B9400356A9E /* LocationParser.m in Sources */,
 				ADC6F7C41A81AEFE00356A9E /* IncidentTableViewCell.m in Sources */,
 				493BAA231A84614D00555A66 /* RadiusSettingTableViewCell.m in Sources */,
+				493BAA381A849F9B00555A66 /* CollectionViewCell.m in Sources */,
 				ADC6F7D71A81FF7C00356A9E /* TrafficIncidentModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
