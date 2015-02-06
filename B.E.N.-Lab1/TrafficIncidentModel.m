@@ -13,6 +13,7 @@
 @interface TrafficIncidentModel()
 
     @property (strong, nonatomic) NSMutableArray* currentIncidents;
+    @property (strong, nonatomic) NSMutableArray* tempIncidents;
 
 @end
 
@@ -51,13 +52,23 @@
     return _currentIncidents;
 }
 
+-(NSMutableArray*) tempIncidents {
+    if (!_tempIncidents)
+    {
+        _tempIncidents = [[NSMutableArray alloc] init];
+    }
+    return _tempIncidents;
+}
+
 -(NSArray*) getCurrentIncidents {
     
-    return [_currentIncidents copy]	;
+    return [self.currentIncidents copy]	;
     
 }
 
 - (NSArray *)incidentsFromJSON:(NSData *)incidentsAsJSON error:(NSError **)error {
+    
+    @try {
     
     NSError *internalError = nil;
     
@@ -87,7 +98,10 @@
         empty = 1;
     }
      */
-    self.currentIncidents = [[NSMutableArray alloc] init];
+    self.tempIncidents = [[NSMutableArray alloc] init];
+    //NSMutableArray* currIncidents = [[NSMutableArray alloc] init];
+    //currIncidents = [self.currentIncidents copy];
+    //NSMutableArray* currIncidents = [self.currentIncidents copy];
 
     
     //only need incidents but:
@@ -120,21 +134,27 @@
         BOOL unique = YES;
         
         //TODO: CHECK THIS ERROR BAD ACCESS
-        for(TrafficIncident* inc in self.currentIncidents) {
+        for(TrafficIncident* inc in self.tempIncidents) {
             if([inc.shortDesc isEqualToString:incident.shortDesc])
                 unique = NO;
         }
         if(unique)
-            [self.currentIncidents addObject:incident];
+            [self.tempIncidents addObject:incident];
         
-        NSLog([NSString stringWithFormat:@"%lu, %@", (unsigned long)[self.currentIncidents count], incident.roadName]);
+        NSLog([NSString stringWithFormat:@"%lu, %@", (unsigned long)[self.tempIncidents count], incident.roadName]);
         
     }
     
-    NSLog([NSString stringWithFormat:@"after adding %lu", (unsigned long)[self.currentIncidents count]]);
+    NSLog([NSString stringWithFormat:@"after adding %lu", (unsigned long)[self.tempIncidents count]]);
     
-    
-    return self.currentIncidents;
+    [self.currentIncidents setArray:self.tempIncidents];
+    return self.tempIncidents;
+        
+    }
+    @catch (NSException *exception) {
+        NSLog(@"ERRRORRR: %@", exception.debugDescription);
+        return @[];
+    }
 }
 
 @end
