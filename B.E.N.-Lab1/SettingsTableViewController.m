@@ -89,8 +89,9 @@
     }
     else if(indexPath.section==2) {
         IncidentTypeTableViewCell* incidentTypeCell = nil;
+        
         incidentTypeCell = [tableView dequeueReusableCellWithIdentifier:@"incidentTypeCell" forIndexPath:indexPath];
-        //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
+        
         return incidentTypeCell;
     }
     else if(indexPath.section==3) {
