@@ -21,6 +21,7 @@
 @interface TableViewController() <IncidentManagerDelegate>//, CLLocationManagerDelegate>
 
     @property (strong, nonatomic) NSArray* incidents;
+    @property (strong, nonatomic) NSArray* incidents_filtered;
     @property (strong, nonatomic) IncidentManager* manager;
     @property (weak, nonatomic) CLLocationManager* locationManager;
     @property (strong, nonatomic) TrafficIncidentModel *trafficModel;
@@ -28,6 +29,9 @@
 @end
 
 @implementation TableViewController
+
+NSPredicate *predicate_incidentType;
+NSPredicate *predicate_severity;
 
 -(TrafficIncidentModel*) trafficModel {
     if(!_trafficModel)
@@ -102,6 +106,51 @@
                                                object:nil];
     
     NSLog(@"View did load");
+    
+    switch ([TrafficIncidentModel incidentTypeLimit]) {
+        case 0:
+            predicate_incidentType = [NSPredicate predicateWithFormat:@"type = 1 OR type = 2 OR type = 3 OR type = 4"];
+            break;
+        case 1:
+            predicate_incidentType = [NSPredicate predicateWithFormat:@"type = 1"];
+            break;
+        case 2:
+            predicate_incidentType = [NSPredicate predicateWithFormat:@"type = 2"];
+            break;
+        case 3:
+            predicate_incidentType = [NSPredicate predicateWithFormat:@"type = 3"];
+            break;
+        case 4:
+            predicate_incidentType = [NSPredicate predicateWithFormat:@"type = 4"];
+            break;
+        case 5:
+            predicate_incidentType = [NSPredicate predicateWithFormat:@"type = 1 OR type = 4"];
+            break;
+        default:
+            predicate_incidentType = [NSPredicate predicateWithFormat:@"type = 1 OR type = 2 OR type = 3 OR type = 4"];
+            break;
+    }
+    
+    switch ([TrafficIncidentModel severityLimit]) {
+        case 0:
+            predicate_severity = [NSPredicate predicateWithFormat:@"severity = 0 OR severity = 1 OR severity = 2 OR severity = 3 OR severity = 4"];
+            break;
+        case 1:
+            predicate_severity = [NSPredicate predicateWithFormat:@"severity = 1 OR severity = 2 OR severity = 3 OR severity = 4"];
+            break;
+        case 2:
+            predicate_severity = [NSPredicate predicateWithFormat:@"severity = 2 OR severity = 3 OR severity = 4"];
+            break;
+        case 3:
+            predicate_severity = [NSPredicate predicateWithFormat:@"severity = 3 OR severity = 4"];
+            break;
+        case 4:
+            predicate_severity = [NSPredicate predicateWithFormat:@"severity = 4"];
+            break;
+        default:
+            predicate_severity = [NSPredicate predicateWithFormat:@"severity = 0 OR severity = 1 OR severity = 2 OR severity = 3 OR severity = 4"];
+            break;
+    }
 }
 
 #pragma mark - Notification Observer
@@ -122,17 +171,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    self.incidents_filtered = [self.incidents filteredArrayUsingPredicate:predicate_severity];
+    self.incidents_filtered = [self.incidents_filtered filteredArrayUsingPredicate:predicate_incidentType];
     // Return the number of rows in the section.
     // self looks at current class
     //if(section == 0)
     NSLog(@"incidents to display: %f, %f, %f", self.incidents.count, [TrafficIncidentModel incidentLimit], MIN(self.incidents.count, [TrafficIncidentModel incidentLimit]));
-    return MIN(self.incidents.count, [TrafficIncidentModel incidentLimit]);
+    return MIN(self.incidents_filtered.count, [TrafficIncidentModel incidentLimit]);
     //else
      //   return 1;
 }
 
 // Need to uncomment!!
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     IncidentTableViewCell* incidentCell = nil;
     if(indexPath.section==0){
         
@@ -142,8 +194,8 @@
         incidentCell = [tableView dequeueReusableCellWithIdentifier:@"IncidentCell" forIndexPath:indexPath];
         //cell = [tableView dequeueReusableCellWithIdentifier:@"IncidentCell" forIndexPath:indexPath];
         
-        if(self.incidents && self.incidents.count) {
-            TrafficIncident *incident = self.incidents[indexPath.row];
+        if(self.incidents_filtered && self.incidents_filtered.count) {
+            TrafficIncident *incident = self.incidents_filtered[indexPath.row];
             //NSString* location = [NSString stringWithFormat:@"(%f, %f)", incident.lat, incident.lng];
             
             // Configure the cell...
@@ -232,7 +284,7 @@
 
 -(void)fetchingIncidentsFailedWithError:(NSError *)error {
 
-    NSLog(@"Error %@; %@", error, [error localizedDescription]);
+    NSLog(@"Error %@; %@", error, [error debugDescription]);
     
 }
 

@@ -97,9 +97,11 @@
             
             return radiusCell;
         }
+        
         else if(indexPath.section==1) {
             NumIncidentsSettingTableViewCell *numIncidentCell = nil;
             numIncidentCell = [tableView dequeueReusableCellWithIdentifier:@"numIncidentCell" forIndexPath:indexPath];
+            _numIncidentCell = numIncidentCell;
             
             numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)numIncidentCell.numIncidentsStepper.value];
             
@@ -132,8 +134,8 @@
             
             [severityCell.minimumSeveritySegment addTarget:self
                                                     action:@selector(severityChanged:)
-                                          forControlEvents:UIControlEventTouchUpInside];
-            return severityCell;
+                                          forControlEvents:UIControlEventValueChanged];
+             return severityCell;
         }
         else if(indexPath.section==4) {
             DisableUpdateTableViewCell* disableUpdateCell = nil;
@@ -220,11 +222,12 @@
     }
 }
 
--(IBAction)severityChanged:(UIStepper*)sender{
+-(IBAction)severityChanged:(id)sender{
+    UISegmentedControl *segment=(UISegmentedControl*)sender;
     //_numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)sender.value];
     
-    [TrafficIncidentModel setSeverityLimit:(int)sender.value];
-    NSLog(@"severity limit val: %d, %d", (int)sender.value, [TrafficIncidentModel severityLimit]);
+    [TrafficIncidentModel setSeverityLimit:(int)segment.selectedSegmentIndex];
+    NSLog(@"severity limit val: %d, %d", (int)segment.selectedSegmentIndex, [TrafficIncidentModel severityLimit]);
     
 }
 /*
@@ -251,9 +254,9 @@
 - (void)changedIncidentType:(NSNotification *)notification {
     //[self.locationManager startUpdatingLocation];
     
-    [TrafficIncidentModel setIncidentTypeLimit:[[notification.userInfo valueForKey:@"radius"] floatValue]];
+    [TrafficIncidentModel setIncidentTypeLimit:[[notification.userInfo valueForKey:@"type"] floatValue]];
     
-    NSLog(@"incident type limit val: %d, %d", [[notification.userInfo valueForKey:@"radius"] floatValue], [TrafficIncidentModel incidentTypeLimit]);
+    NSLog(@"incident type limit val: %d, %d", [[notification.userInfo valueForKey:@"type"] floatValue], [TrafficIncidentModel incidentTypeLimit]);
     
 }
 @end

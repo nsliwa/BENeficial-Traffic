@@ -27,7 +27,8 @@
 #pragma mark <UICollectionViewDataSource>
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSLog(@"counting.............");
-    return self.trafficModel.getCurrentIncidents.count;
+    return MIN(self.trafficModel.getCurrentIncidents.count, [TrafficIncidentModel incidentLimit]);
+//    return self.trafficModel.getCurrentIncidents.count;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
