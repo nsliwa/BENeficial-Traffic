@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q0t-NR-3W5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q0t-NR-3W5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -473,17 +473,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <pickerView contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="severityPicker" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-dW-fbx">
-                                            <rect key="frame" x="155" y="-42" width="165" height="162"/>
+                                            <rect key="frame" x="8" y="-49" width="304" height="180"/>
                                         </pickerView>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Incident Types:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sj-th-eIN">
-                                            <rect key="frame" x="33" y="24" width="114" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="incidentLabel" destination="4Sj-th-eIN" id="whO-1j-lrH"/>
                                     <outlet property="incidentType" destination="Rfe-dW-fbx" id="CSY-C4-ONN"/>
                                 </connections>
                             </tableViewCell>
@@ -533,7 +527,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-Gm-3UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="1356"/>
+            <point key="canvasLocation" x="128" y="1354"/>
         </scene>
     </scenes>
     <resources>

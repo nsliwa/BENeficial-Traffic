@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IncidentTypeTableViewCell : UITableViewCell
+@interface IncidentTypeTableViewCell : UITableViewCell<UIPickerViewDataSource, UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIPickerView *incidentType;
 @property (weak, nonatomic) IBOutlet UITextField *incidentLabel;
 
