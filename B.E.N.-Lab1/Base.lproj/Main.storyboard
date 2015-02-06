@@ -505,8 +505,13 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q3e-QB-H3c" id="lfm-YK-i3S">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="updateNowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOf-c6-JPB">
-                                            <rect key="frame" x="115" y="24" width="90" height="30"/>
+                                        <button contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="updateNowButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOf-c6-JPB">
+                                            <rect key="frame" x="14" y="0.0" width="298" height="79"/>
+                                            <color key="backgroundColor" red="0.83502508308534873" green="0.85437164998187032" blue="0.85785590277777779" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="298" id="ice-kw-l9f"/>
+                                                <constraint firstAttribute="height" constant="79" id="mRc-2p-9Dq"/>
+                                            </constraints>
                                             <state key="normal" title="Update Now!">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -527,7 +532,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-Gm-3UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="1354"/>
+            <point key="canvasLocation" x="128" y="1351"/>
         </scene>
     </scenes>
     <resources>

@@ -48,29 +48,29 @@ static int incidentLimit = 10;
 +(void)setIncidentLimit:(int)incidentLim {
     @synchronized(self) { incidentLimit = incidentLim; }
 }
-+(double)getIncidentLimit {
++(int)getIncidentLimit {
     return incidentLimit;
 }
 
 static int severityLimit = 0;
-+(double) severityLimit {
++(int) severityLimit {
     @synchronized(self) { return severityLimit; }
 }
-+(void)setSeverityLimit:(double)severityLim {
++(void)setSeverityLimit:(int)severityLim {
     @synchronized(self) { severityLimit = severityLim; }
 }
-+(double)getSeverityLimit {
++(int)getSeverityLimit {
     return severityLimit;
 }
 
 static int incidentTypeLimit = 0;
-+(double) incidentTypeLimit {
++(int) incidentTypeLimit {
     @synchronized(self) { return incidentTypeLimit; }
 }
-+(void)setIncidentTypeLimit:(double)incidentTypeLim {
++(void)setIncidentTypeLimit:(int)incidentTypeLim {
     @synchronized(self) { incidentTypeLimit = incidentTypeLim; }
 }
-+(double)getIncidentTypeLimit {
++(int)getIncidentTypeLimit {
     return incidentTypeLimit;
 }
 
