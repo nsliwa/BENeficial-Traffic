@@ -68,9 +68,9 @@
                               @"type" : [NSNumber numberWithLong:row]
                               };
         
-        NSLog([dic valueForKey:@"type"]);
+        NSLog(@"PICCCKER: %@",[dic valueForKey:@"type"]);
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"incidentTypeSelected" object:self userInfo:dic];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"incidentTypeSelected" object:nil userInfo:dic];
 
         //[[NSNotificationCenter defaultCenter] postNotificationName:@"incidentType" object:self userInfo:dic];
     }

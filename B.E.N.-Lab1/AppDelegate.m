@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Foundation/Foundation.h>
 
+#import "TrafficIncidentModel.h"
+
 @interface AppDelegate () <CLLocationManagerDelegate>
 
 @property NSTimer* timer;
@@ -100,6 +102,15 @@
     [self.locationManager startUpdatingLocation];
     
     NSLog(@"turn on location manager - notification");
+}
+
+- (void)changedIncidentType:(NSNotification *)notification {
+    //[self.locationManager startUpdatingLocation];
+    
+    [TrafficIncidentModel setIncidentTypeLimit:[[notification.userInfo valueForKey:@"radius"] floatValue]];
+    
+    NSLog(@"incident type limit val: %d, %d", [[notification.userInfo valueForKey:@"radius"] floatValue], [TrafficIncidentModel incidentTypeLimit]);
+    
 }
 
 - (void)turnOffLocationManager:(NSNotification *)notification {

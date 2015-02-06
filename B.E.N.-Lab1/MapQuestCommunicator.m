@@ -79,8 +79,14 @@ static double radius = 10.0;
     NSURL *url = [[NSURL alloc] initWithString:urlAsString];
     NSLog(@"%@", urlAsString);
     
-    NSData *imageData = [NSData dataWithContentsOfURL:url];
-    return [UIImage imageWithData:imageData];
+    @try {
+        NSData *imageData = [NSData dataWithContentsOfURL:url];
+        return [UIImage imageWithData:imageData];
+    }
+    @catch (NSException *exception) {
+        return nil;
+    }
+    
 }
 
 +(CLLocationCoordinate2D) getCoordinateByLocation:(NSString *)location {
