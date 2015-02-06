@@ -19,6 +19,7 @@
 @interface SettingsTableViewController()
 
 @property NumIncidentsSettingTableViewCell* numIncidentCell;
+@property (nonatomic)  NSUserDefaults* defaults;
 
 @end
 
@@ -31,19 +32,33 @@
     //self.numIncidentsLabel.text = [NSString stringWithFormat:@"%f", sender.value];
     
 }*/
-/*
+
 -(void) viewDidLoad {
+    
+    if (!_defaults) {
+        _defaults = [NSUserDefaults standardUserDefaults];
+    
+        NSNumber* radius = [NSNumber numberWithFloat:[MapquestCommunicator  radius]];
+        NSNumber* numIncidents = [NSNumber numberWithInt:[TrafficIncidentModel  incidentLimit]];
+        NSNumber* incidentType = [NSNumber numberWithInt:[TrafficIncidentModel incidentTypeLimit]];
+        NSNumber* severity = [NSNumber numberWithInt:[TrafficIncidentModel severityLimit]];
+    
+        [_defaults setObject:radius forKey:@"radius"];
+        [_defaults setObject:numIncidents forKey:@"numIncidents"];
+        [_defaults setObject:incidentType forKey:@"incidentType"];
+        [_defaults setObject:severity forKey:@"severity"];
+        
+    }
+    
+    
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
+    /*[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(changedRadiusLabel:)
                                                  name:@"radiusChanged"
-                                               object:nil];
+                                               object:nil];*/
     
-    
-    
-    
-}*/
+}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -71,6 +86,10 @@
                                     action:@selector(radiusChanged:)
                           forControlEvents:UIControlEventTouchUpInside];
         
+        radiusCell.radiusSlider.value = [_defaults floatForKey:@"radius"];
+        
+        NSLog(@"Default stepper is %f", (float)[_defaults floatForKey:@"radius"]);
+        
         return radiusCell;
     }
     else if(indexPath.section==1) {
@@ -82,6 +101,11 @@
         [_numIncidentCell.numIncidentsStepper addTarget:self
                                                  action:@selector(stepperChanged:)
                                        forControlEvents:UIControlEventTouchUpInside];
+        
+        _numIncidentCell.numIncidentsStepper.value = [_defaults integerForKey:@"numIncidents"];
+        _numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Number of incidents displayed: %d", (int)_numIncidentCell.numIncidentsStepper.value];
+        
+        NSLog(@"Default stepper is %ld", (long)[_defaults integerForKey:@"numIncidents"]);
         
         
         return _numIncidentCell;
@@ -96,8 +120,6 @@
     else if(indexPath.section==2) {
         SeverityTableViewCell* severityCell = nil;
         severityCell = [tableView dequeueReusableCellWithIdentifier:@"severityCell" forIndexPath:indexPath];
-        
-        
         
         return severityCell;
     }
@@ -128,7 +150,11 @@
 
 -(void)radiusChanged:(UISlider*)sender
 {
+    NSNumber* newRadius = [NSNumber numberWithFloat:sender.value];
     [MapquestCommunicator setMapRadius:sender.value];
+    /*[_defaults removeObjectForKey:@"radius"];
+    [_defaults setObject:newRadius forKey:@"radius"];
+    [_defaults synchronize];*/
     NSLog(@"radius val: %f", [MapquestCommunicator radius]);
     /*
     @try {
