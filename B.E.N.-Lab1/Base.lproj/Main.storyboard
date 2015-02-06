@@ -130,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="at4-zG-mRf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="at4-zG-mRf">
                                 <rect key="frame" x="10" y="288" width="300" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Street:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNX-nz-LYe">
@@ -475,15 +475,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2cJ-LM-gYe"/>
-                    <connections>
-                        <outlet property="disableUpdateSwitch" destination="Fgi-aZ-6Js" id="SXV-Rs-JcE"/>
-                        <outlet property="incidentTypeSegmentControl" destination="T99-XI-b3a" id="bq4-HX-onI"/>
-                        <outlet property="numIncidentsLabel" destination="0Of-4R-ODc" id="SQc-Ix-rQ7"/>
-                        <outlet property="numIncidentsStepper" destination="nh8-Xr-h0E" id="b71-tw-Omd"/>
-                        <outlet property="radiusSlider" destination="GSR-Pi-DwX" id="8Ys-Td-GRI"/>
-                        <outlet property="severityPicker" destination="Rfe-dW-fbx" id="DtG-Rw-w8H"/>
-                        <outlet property="updateNowButton" destination="q3e-QB-H3c" id="Sit-rg-Msv"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-Gm-3UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
