@@ -16,6 +16,8 @@
 
 @interface SettingsTableViewController()
 
+@property NumIncidentsSettingTableViewCell* numIncidentCell;
+
 @end
 
 @implementation SettingsTableViewController
@@ -73,12 +75,15 @@
         return radiusCell;
     }
     else if(indexPath.section==1) {
-        NumIncidentsSettingTableViewCell* numIncidentCell = nil;
-        numIncidentCell = [tableView dequeueReusableCellWithIdentifier:@"numIncidentCell" forIndexPath:indexPath];
+        _numIncidentCell = nil;
+        _numIncidentCell = [tableView dequeueReusableCellWithIdentifier:@"numIncidentCell" forIndexPath:indexPath];
+        
+        [_numIncidentCell.numIncidentsStepper addTarget:self
+                                                 action:@selector(stepperChanged:)
+                                       forControlEvents:UIControlEventTouchUpInside];
         
         
-        
-        return numIncidentCell;
+        return _numIncidentCell;
     }
     else if(indexPath.section==2) {
         IncidentTypeTableViewCell* incidentTypeCell = nil;
@@ -132,6 +137,23 @@
         NSLog(exception.debugDescription);
     }
     
+}
+
+-(void)stepperChanged:(UIStepper*)sender{
+    _numIncidentCell.numIncidentsLabel.text = [NSString stringWithFormat:@"Incidents: %d", (int)sender.value];
+    @try {
+        
+        NSDictionary *dic = @{
+                          @"number" : [NSNumber numberWithInt:sender.value]
+                          };
+    
+        NSLog([dic valueForKey:@"number"]);
+    
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"numIncidents" object:self userInfo:dic];
+    }
+        @catch (NSException *exception) {
+        NSLog(exception.debugDescription);
+    }
 }
 
 -(void)navigationUpdaterToggled:(UISwitch*)sender
