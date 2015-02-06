@@ -13,9 +13,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) CLLocationManager *locationManager;
--(void)_turnOnLocationManager;
-+(void)turnOnLocationManager;
-+(void)turnOffLocationManager;
 
 @end
 

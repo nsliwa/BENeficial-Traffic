@@ -172,7 +172,7 @@
         [self.navigationController pushViewController:tvc animated:YES];
     }
     else if([segue.identifier isEqualToString:@"IncidentMapSegue"]) {
-        MapviewController *mvc = segue.destinationViewController;
+        MapViewController *mvc = segue.destinationViewController;
         [self.navigationController pushViewController:mvc animated:YES];
     }
     

@@ -12,7 +12,10 @@
 @interface AppDelegate () <CLLocationManagerDelegate>
 
 @property NSTimer* timer;
-
+/*
+-(void)turnOnLocationManager;
+-(void)turnOffLocationManager;
+*/
 @end
 
 @implementation AppDelegate
@@ -51,6 +54,16 @@
         NSLog(@"loc serv enbld");
     }
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(turnOnLocationManager:)
+                                                 name:@"turnOnLocationManager"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(turnOffLocationManager:)
+                                                 name:@"turnOffLocationManager"
+                                               object:nil];
+    
     return YES;
 }
 
@@ -76,18 +89,25 @@
     [self.locationManager stopUpdatingLocation];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(_turnOnLocationManager)  userInfo:nil repeats:NO];
 }
+
 - (void)_turnOnLocationManager {
     [self.locationManager startUpdatingLocation];
-}
-/*
-+ (void)turnOnLocationManager {
-    [self.locationManager startUpdatingLocation];
+    
+    NSLog(@"turn on location manager - timer");
 }
 
-+ (void)turnOffLocationManager {
-    [self.timer.invalidate];
+- (void)turnOnLocationManager:(NSNotification *)notification {
+    [self.locationManager startUpdatingLocation];
+    
+    NSLog(@"turn on location manager - notification");
 }
-*/
+
+- (void)turnOffLocationManager:(NSNotification *)notification {
+    [self.timer invalidate];
+    
+    NSLog(@"turn off location manager - notification");
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

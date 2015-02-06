@@ -94,8 +94,12 @@
         DisableUpdateTableViewCell* disableUpdateCell = nil;
         disableUpdateCell = [tableView dequeueReusableCellWithIdentifier:@"disableUpdateCell" forIndexPath:indexPath];
         //cell = [[RadiusSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"radiusCell"];
-        return disableUpdateCell;
+        
         //cell = [[DisableUpdateTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"disableUpdateCell"];
+        
+        [disableUpdateCell.disableUpdateSwitch addTarget:self action:@selector(navigationUpdaterToggled:) forControlEvents:UIControlEventTouchUpInside];
+        
+        return disableUpdateCell;
     }
     else { //if(indexPath.section==5) {
         UpdateNowTableViewCell* updateNowCell = nil;
@@ -111,6 +115,17 @@
     
     //return cell;
     
+}
+
+-(void)navigationUpdaterToggled:(UISwitch*)sender
+{
+    if (sender.on) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"turnOnLocationManager" object:self];
+        
+    }
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"turnOffLocationManager" object:self];
+    }
 }
 
 @end
