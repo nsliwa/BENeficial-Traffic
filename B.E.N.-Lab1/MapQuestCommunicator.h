@@ -22,4 +22,6 @@
 
     +(UIImage*) getThumbMap:(double)lat lng:(double)lon;
     +(UIImage*) getIncidentMap:(double)lat lng:(double)lon;
+
+    +(CLLocationCoordinate2D) getCoordinateByLocation:(NSString*) location;
 @end

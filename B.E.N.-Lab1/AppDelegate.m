@@ -74,11 +74,15 @@
     NSLog(@"chngd auth stat");
     
     [self.locationManager stopUpdatingLocation];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(_turnOnLocationManager)  userInfo:nil repeats:NO];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(turnOnLocationManager)  userInfo:nil repeats:NO];
 }
 
-- (void)_turnOnLocationManager {
++ (void)turnOnLocationManager {
     [self.locationManager startUpdatingLocation];
+}
+
++ (void)turnOnLocationManager {
+    [self.timer.invalidate];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -9,6 +9,7 @@
 #import <math.h>
 #import "MapquestCommunicator.h"
 #import "MapQuestCommunicatorDelegate.h"
+#import "LocationParser.h"
 
 #define API_KEY @"Fmjtd%7Cluu829a2nq%2C7x%3Do5-947g06"
 
@@ -72,6 +73,29 @@
     
     NSData *imageData = [NSData dataWithContentsOfURL:url];
     return [UIImage imageWithData:imageData];
+}
+
++(CLLocationCoordinate2D) getCoordinateByLocation:(NSString *)location {
+    
+    NSString *urlAsString = [NSString stringWithFormat:@"http://www.mapquestapi.com/geocoding/v1/address?key=%@&location=%@", API_KEY, location];
+    
+    NSURL *url = [[NSURL alloc] initWithString:urlAsString];
+    NSLog(@"%@", urlAsString);
+    
+    NSURLResponse* response = nil;
+    NSURLRequest* urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    
+    @try {
+        NSData* data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+        return [LocationParser parseJSONLocation:data];
+    }
+    @catch (NSException *exception) {
+        CLLocationCoordinate2D coor;
+        coor.latitude = 0.0;
+        coor.longitude = 0.0;
+        return coor;
+    }
+    
 }
 
 -(double) radiansToDegrees:(double) radians {

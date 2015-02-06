@@ -25,6 +25,7 @@
 		ADC6F7DA1A820A3000356A9E /* IncidentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7D91A820A3000356A9E /* IncidentManager.m */; };
 		ADC6F7DF1A82121900356A9E /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7DE1A82121900356A9E /* TableViewController.m */; };
 		ADC6F7E21A838C2C00356A9E /* MasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7E11A838C2C00356A9E /* MasterTableViewController.m */; };
+		ADC6F7E51A846B9400356A9E /* LocationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC6F7E41A846B9400356A9E /* LocationParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		ADC6F7DE1A82121900356A9E /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		ADC6F7E01A838C2C00356A9E /* MasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTableViewController.h; sourceTree = "<group>"; };
 		ADC6F7E11A838C2C00356A9E /* MasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewController.m; sourceTree = "<group>"; };
+		ADC6F7E31A846B9400356A9E /* LocationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationParser.h; sourceTree = "<group>"; };
+		ADC6F7E41A846B9400356A9E /* LocationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +132,8 @@
 				ADC6F7CF1A81FE3500356A9E /* MapQuestCommunicator.h */,
 				ADC6F7D01A81FE3500356A9E /* MapQuestCommunicator.m */,
 				ADC6F7DB1A820C1A00356A9E /* MapQuestCommunicatorDelegate.h */,
-				ADC6F7D81A820A3000356A9E /* IncidentManager.h */,
 				ADC6F7D91A820A3000356A9E /* IncidentManager.m */,
+				ADC6F7D81A820A3000356A9E /* IncidentManager.h */,
 				ADC6F7DC1A820CDB00356A9E /* IncidentManagerDelegate.h */,
 				ADC6F7E01A838C2C00356A9E /* MasterTableViewController.h */,
 				ADC6F7E11A838C2C00356A9E /* MasterTableViewController.m */,
@@ -147,6 +150,8 @@
 				ADC6F79A1A8169DD00356A9E /* Supporting Files */,
 				49B1F6D21A844F7E000916E0 /* SettingsTableViewCell.h */,
 				49B1F6D31A844F7E000916E0 /* SettingsTableViewCell.m */,
+				ADC6F7E31A846B9400356A9E /* LocationParser.h */,
+				ADC6F7E41A846B9400356A9E /* LocationParser.m */,
 			);
 			path = "B.E.N.-Lab1";
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				ADC6F7E21A838C2C00356A9E /* MasterTableViewController.m in Sources */,
 				ADC6F79D1A8169DD00356A9E /* main.m in Sources */,
 				ADC6F7DA1A820A3000356A9E /* IncidentManager.m in Sources */,
+				ADC6F7E51A846B9400356A9E /* LocationParser.m in Sources */,
 				ADC6F7C41A81AEFE00356A9E /* IncidentTableViewCell.m in Sources */,
 				ADC6F7D71A81FF7C00356A9E /* TrafficIncidentModel.m in Sources */,
 			);
